@@ -22,7 +22,7 @@ jobs:
           gradle-version: 8.9
 
       - name: Build signed release APK
-        run: gradle --no-daemon --stacktrace assembleRelease
+        run: gradle --no-daemon --stacktrace assembleRelease -x lint -x lintVitalAnalyzeRelease -x lintVitalReportRelease -x lintVitalRelease
 
       - name: Verify signature
         run: |

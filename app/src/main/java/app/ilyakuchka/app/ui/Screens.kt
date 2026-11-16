@@ -428,7 +428,12 @@ fun LibraryScreen() {
                 val pager = rememberPager(listOf(uid, subject), transform = { it["entity"] ?: it }) { after ->
                     Api.call(
                         "fetchUserBookmarks",
-                        jo("after" to after, "userId" to uid, "subjectType" to subject)
+                        jo(
+                            "after" to after,
+                            "userId" to uid,
+                            "subjectType" to subject,
+                            "orderBy" to jo("field" to "CREATED_AT", "direction" to "DESC")
+                        )
                     ).at("userBookmarks")
                 }
                 TileGrid(pager) { n ->

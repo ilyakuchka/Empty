@@ -47,22 +47,22 @@ object Prefs {
 
     val loggedIn: Boolean get() = authVersion >= 0 && (token.isNotBlank() || cookie.isNotBlank())
 
-    fun setTheme(v: String) {
+    fun changeTheme(v: String) {
         theme = v
         sp.edit().putString("theme", v).apply()
     }
 
-    fun setShowExplicit(v: Boolean) {
+    fun changeShowExplicit(v: Boolean) {
         showExplicit = v
         sp.edit().putBoolean("explicit", v).apply()
     }
 
-    fun setReaderMode(v: String) {
+    fun changeReaderMode(v: String) {
         readerMode = v
         sp.edit().putString("reader", v).apply()
     }
 
-    fun setDataSaver(v: Boolean) {
+    fun changeDataSaver(v: Boolean) {
         dataSaver = v
         sp.edit().putBoolean("saver", v).apply()
     }

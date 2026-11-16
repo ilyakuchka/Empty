@@ -52,21 +52,21 @@ fun SettingsScreen() {
             Text("Тема", style = MaterialTheme.typography.titleMedium)
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 for ((k, t) in listOf("system" to "Системная", "light" to "Светлая", "dark" to "Тёмная")) {
-                    FilterChip(selected = Prefs.theme == k, onClick = { Prefs.setTheme(k) }, label = { Text(t) })
+                    FilterChip(selected = Prefs.theme == k, onClick = { Prefs.changeTheme(k) }, label = { Text(t) })
                 }
             }
             Text("Читалка", style = MaterialTheme.typography.titleMedium)
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                FilterChip(selected = Prefs.readerMode == "vertical", onClick = { Prefs.setReaderMode("vertical") }, label = { Text("Лента") })
-                FilterChip(selected = Prefs.readerMode == "paged", onClick = { Prefs.setReaderMode("paged") }, label = { Text("Постранично") })
+                FilterChip(selected = Prefs.readerMode == "vertical", onClick = { Prefs.changeReaderMode("vertical") }, label = { Text("Лента") })
+                FilterChip(selected = Prefs.readerMode == "paged", onClick = { Prefs.changeReaderMode("paged") }, label = { Text("Постранично") })
             }
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text("Экономия трафика", Modifier.weight(1f))
-                Switch(Prefs.dataSaver, { Prefs.setDataSaver(it) })
+                Switch(Prefs.dataSaver, { Prefs.changeDataSaver(it) })
             }
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text("Показывать 18+ в каталоге", Modifier.weight(1f))
-                Switch(Prefs.showExplicit, { Prefs.setShowExplicit(it) })
+                Switch(Prefs.showExplicit, { Prefs.changeShowExplicit(it) })
             }
             Text(
                 "Empty ${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})\n${BuildConfig.API_URL}",

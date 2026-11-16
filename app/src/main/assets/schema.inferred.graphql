@@ -1,0 +1,3805 @@
+# RECONSTRUCTED (inferred from client-side GraphQL documents) — NOT the real schema.
+# Types come from fragment `on X` conditions & variable types; scalars/nullability/list-ness are unknown (`?`).
+# `~` = type name guessed from naming convention (no fragment gave it).
+
+type Query {
+  achievementInsights: AchievementInsightsPayload ~
+  achievements(first: <literal:100>, after: String): AchievementsPayload ~
+  activities(first: <literal:10>, after: String, userId: ID, subjectId: ID): ActivitiesPayload ~
+  ad(page: <literal:main>): AdPayload ~
+  allLabels(subjectType: <literal:MANGA>): Label
+  anime(slug: String!): AnimePayload | Anime ~
+  animeCharacters(animeId: ID!, first: <literal:100>, after: String): AnimeCharactersPayload ~
+  animeEpisodeTranslationWatchesCountInsight(group: AnimeEpisodeTranslationWatchesCountInsightGroup!, interval: AnimeEpisodeTranslationWatchesCountInsightInterval!, period: AnimeEpisodeTranslationWatchesCountInsightPeriod!, animeId: ID): AnimeEpisodeTranslationWatchesCountInsightPayload ~
+  animeEpisodeTranslations(first: <literal:5>, orderBy: <literal:ObjectValue>): AnimeEpisodeTranslationsPayload ~
+  animeEpisodes(animeId: ID!, first: <literal:100>, number: Float, after: String, orderBy: AnimeEpisodeOrder!): AnimeEpisodesPayload ~
+  animePopularByPeriod(period: AnimePopularPeriod!): Anime
+  animeRelations(animeId: ID!, first: <literal:100>, after: String): AnimeRelationsPayload ~
+  animeStaff(animeId: ID!, first: <literal:100>, after: String): AnimeStaffPayload ~
+  animeSubmissions(animeId: ID!, first: Int!, after: String, status: AnimeSubmissionStatus): AnimeSubmissionsPayload ~
+  animeViewsCountInsight(group: AnimeViewsCountInsightGroup!, interval: AnimeViewsCountInsightInterval!, period: AnimeViewsCountInsightPeriod!, animeId: ID): AnimeViewsCountInsightPayload ~
+  animes(first: Int, after: String, orderBy: <literal:ObjectValue>, search: String, type: AnimeTypeFilter, format: AnimeFormatFilter, status: AnimeStatusFilter, source: AnimeSourceFilter, rating: AnimeRatingFilter, season: AnimeSeasonFilter, episodes: AnimeEpisodesFilter, originCountry: AnimeOriginCountryFilter, releasedOn: AnimeReleasedOnFilter, completedOn: AnimeCompletedOnFilter, label: AnimeLabelFilter, character: AnimeCharacterFilter, staff: AnimeStaffFilter, studio: AnimeStudioFilter, bookmarkCollections: AnimeBookmarkCollectionsFilter, translitionStatus: AnimeTranslitionStatusFilter): AnimesPayload ~
+  availableCardSlots(entityId: ID!, characterId: ID!): AvailableCardSlotsPayload ~
+  bookmarkable(subjectId: ID!): UserBookmark
+  card(slug: String!): Card
+  cards(first: <literal:24>, after: String, orderBy: <literal:ObjectValue>, label: CardLabelFilter, color: CardColorFilter, rank: CardRankFilter, author: CardAuthorFilter, character: CardCharacterFilter, entity: CardEntityFilter, explicit: Boolean, featured: Boolean, animated: Boolean, audio: Boolean): CardsPayload ~
+  character(slug: String!): Character
+  characterSubmissions(characterId: ID!, first: Int!, after: String, status: CharacterSubmissionStatus): CharacterSubmissionsPayload ~
+  collectible(slug: String!): Collectible
+  collectibleBundles(first: Int, after: String, orderBy: CollectibleBundleOrder, visible: Boolean): CollectibleBundlesPayload ~
+  collectibleCoupons(first: Int, after: String, orderBy: CollectibleCouponOrder): CollectibleCouponsPayload ~
+  collectibles(first: Int, after: String, type: CollectibleType!, rating: CollectibleRatingFilter, priceGroup: CollectiblePriceGroup, onlyLimited: Boolean, onlyWithSubscription: Boolean, excludePurchased: Boolean, orderBy: CollectibleOrder, visible: Boolean): CollectiblesPayload ~
+  comments(subjectId: ID!, after: String, first: <literal:15>, orderBy: CommentOrder): CommentsPayload ~
+  commentsCountInsight: ?
+  commentsCountTrendingInsight: CommentsCountTrendingInsightPayload ~
+  conversation(slug: String!): Conversation
+  conversationInviteParticipants(first: <literal:20>, after: String, conversationId: ID!, inviteId: ID, requested: Boolean): ConversationInviteParticipantsPayload ~
+  conversationInvitePreview(slug: String!): ConversationInvitePreviewPayload ~
+  conversationInvites(first: <literal:20>, after: String, conversationId: ID!): ConversationInvitesPayload ~
+  conversationMessages(conversationId: ID!, first: Int, after: String, last: Int, before: String): ConversationMessagesPayload ~
+  conversationParticipants(first: <literal:10>, after: String, conversationId: ID!): ConversationParticipantsPayload ~
+  conversations(first: <literal:20>, after: String, unread: Boolean, search: String): ConversationsPayload ~
+  eventDistributions(startAt: NaiveDate!, city: String): EventDistributionsPayload ~
+  events(first: <literal:20>, after: String, type: EventType, status: EventStatus, city: String, startAt: NaiveDate!, orderBy: EventOrder!): EventsPayload ~
+  experimentalSpotlightCredits: ExperimentalSpotlightCreditsPayload ~
+  experimentalSpotlightExperiences: ExperimentalSpotlightExperiencesPayload ~
+  experimentalSpotlightLabels: ExperimentalSpotlightLabelsPayload ~
+  experimentalSpotlights(first: <literal:2>, after: String): ExperimentalSpotlightsPayload ~
+  forgeCardsSlots(mode: ForgeCardMode!): ForgeCardsSlotsPayload ~
+  guild(slug: String!): Guild
+  guildMemberTasks(first: Int, guildId: ID!, onlyIncompleted: Boolean): GuildMemberTask
+  guildMembers(first: Int!, after: String, guildId: ID!, orderBy: GuildMemberOrder): GuildMembersPayload ~
+  guildPointsTransactions(first: <literal:20>, after: String, orderBy: <literal:ObjectValue>): GuildPointsTransactionsPayload ~
+  guildTasks(first: Int, guildId: ID!, onlyIncompleted: Boolean): GuildTask
+  guilds(first: <literal:24>, after: String, orderBy: GuildOrder, name: String): GuildsPayload ~
+  label(slug: String!): Label
+  levelGuilds(regressions: Int!): Level
+  linkVisitsCountInsight(group: LinkVisitsCountInsightGroup!, interval: LinkVisitsCountInsightInterval!, period: LinkVisitsCountInsightPeriod!, linkId: ID): LinkVisitsCountInsightPayload ~
+  links(first: Int!, after: String, ownerId: ID, name: String, link: String, custom: Boolean): LinksPayload ~
+  manga(slug: String!): MangaPayload | Manga ~
+  mangaBookmarkChapter(branchId: ID!, number: String!): MangaBookmarkChapterPayload ~
+  mangaBookmarkNextChapters: MangaBookmarkNextChaptersPayload ~
+  mangaChapter(slug: String!): MangaChapter
+  mangaChapterReadsCountInsight(group: MangaChapterReadsCountInsightGroup!, interval: MangaChapterReadsCountInsightInterval!, period: MangaChapterReadsCountInsightPeriod!, mangaId: ID): MangaChapterReadsCountInsightPayload ~
+  mangaChapters(first: <literal:100>, branchId: ID!, number: Float, after: String, orderBy: MangaChapterOrder!): MangaChaptersPayload ~
+  mangaCharacters(mangaId: ID!, first: <literal:100>, after: String): MangaCharactersPayload ~
+  mangaExternalSources(mangaId: ID!, after: String, first: <literal:10>): MangaExternalSourcesPayload ~
+  mangaPopularByPeriod(period: MangaPopularPeriod!): Manga
+  mangaRecommendations: Manga
+  mangaRelations(mangaId: ID!, first: <literal:100>, after: String): MangaRelationsPayload ~
+  mangaStaff(mangaId: ID!, first: <literal:100>, after: String): MangaStaffPayload ~
+  mangaSubmissions(mangaId: ID!, first: Int!, after: String, status: MangaSubmissionStatus): MangaSubmissionsPayload ~
+  mangaViewsCountInsight(group: MangaViewsCountInsightGroup!, interval: MangaViewsCountInsightInterval!, period: MangaViewsCountInsightPeriod!, mangaId: ID): MangaViewsCountInsightPayload ~
+  mangas(first: Int, orderBy: <literal:ObjectValue>, chapters: MangaChaptersFilter, after: String, search: String, type: MangaTypeFilter, format: MangaFormatFilter, status: MangaStatusFilter, source: MangaSourceFilter, rating: MangaRatingFilter, originCountry: MangaOriginCountryFilter, releasedOn: MangaReleasedOnFilter, completedOn: MangaCompletedOnFilter, label: MangaLabelFilter, character: MangaCharacterFilter, staff: MangaStaffFilter, publisher: MangaPublisherFilter, bookmarkCollections: MangaBookmarkCollectionsFilter, translitionStatus: MangaTranslitionStatusFilter): MangasPayload ~
+  mangasCountInsight: ?
+  myanimelistMangaMetadata(malId: Int!): MyanimelistMangaMetadataPayload ~
+  newComments(first: Int, after: String, authorId: ID): NewCommentsPayload ~
+  newMangaChapters(first: <literal:12>, orderBy: <literal:ObjectValue>, after: String): NewMangaChaptersPayload ~
+  paymentProcessors: PaymentProcessor
+  pendingCardSlots: PendingCardSlotsPayload ~
+  pendingCards(first: <literal:24>, after: String, orderBy: PendingCardOrder): PendingCardsPayload ~
+  pendingGuildMembers(first: Int!, after: String, guildId: ID!): PendingGuildMembersPayload ~
+  pendingMangaChapters(first: <literal:100>, branchId: ID): PendingMangaChaptersPayload ~
+  pendingTeamMembers(first: Int!, after: String, teamId: ID!): PendingTeamMembersPayload ~
+  person(slug: String!): Person
+  personSubmissions(personId: ID!, first: Int!, after: String, status: PersonSubmissionStatus): PersonSubmissionsPayload ~
+  popularTodaySearchQueries: ?
+  post(slug: String!): Post
+  posts(first: <literal:10>, status: PostStatus, orderBy: <literal:ObjectValue>, after: String): PostsPayload ~
+  redemptions(first: Int, after: String, orderBy: RedemptionOrder): RedemptionsPayload ~
+  reports(first: Int!, after: String, entityId: ID, type: [ReportType!], status: ReportStatus, entityType: [ReportEntityType!], orderBy: ReportOrder!): ReportsPayload ~
+  search(query: String!, type: SearchType!, first: <literal:10>): SearchPayload ~
+  shortsMangaChapters(first: <literal:5>, orderBy: <literal:ObjectValue>, after: String): ShortsMangaChaptersPayload ~
+  studio(slug: String!): Studio
+  team(slug: String!): Team
+  teamMembers(first: Int!, after: String, teamId: ID!): TeamMembersPayload ~
+  teamProjects(first: <literal:100>, after: String, teamId: ID!, status: TeamProjectStatus, subjectType: TeamProjectSubjectType, orderBy: TeamProjectOrder): TeamProjectsPayload ~
+  teams(first: <literal:24>, after: String, orderBy: TeamOrder, name: String, activity: TeamActivity): TeamsPayload ~
+  teamsCountInsight: ?
+  teamsCountTrendingInsight: TeamsCountTrendingInsightPayload ~
+  ticketTypeDistributions(status: TicketStatus): TicketTypeDistributionsPayload ~
+  tickets(first: <literal:20>, after: String, status: TicketStatus, type: [TicketType!], entityType: [TicketEntityType!], orderBy: TicketOrder!): TicketsPayload ~
+  user(slug: String!): User
+  userAchievements(userId: ID!): UserAchievement
+  userBookmarks(first: <literal:20>, after: String, userId: ID!, collectionId: ID, subjectType: UserBookmarkSubjectType!, orderBy: UserBookmarkOrder): UserBookmarksPayload ~
+  userCards(first: <literal:20>, after: String, userId: ID!, orderBy: <literal:ObjectValue>, modifier: UserCardModifierFilter, quantity: CardQuantityFilter, label: UserCardLabelFilter, color: UserCardColorFilter, rank: UserCardRankFilter, author: UserCardAuthorFilter, character: UserCardCharacterFilter, entity: UserCardEntityFilter, locked: Boolean, explicit: Boolean, animated: Boolean, audio: Boolean, wants: Boolean, bookmark: Boolean): UserCardsPayload ~
+  userEmojiSets: EmojiSet
+  userImages(first: <literal:10>, after: String, type: UserImageType!): UserImagesPayload ~
+  userRanksInsight: UserRanksInsightPayload ~
+  userStickerSets: StickerSet
+  usersCountInsight: ?
+  usersCountTrendingInsight: UsersCountTrendingInsightPayload ~
+  viewer: ViewerPayload ~
+  viewerTeamProjects(first: <literal:100>, after: String, teamIds: [ID!], status: TeamProjectStatus, subjectType: TeamProjectSubjectType): ViewerTeamProjectsPayload ~
+  viewerTodayExperience: ?
+  viewerTotalCredits: ?
+}
+
+type Mutation {
+  acceptAnimeSubmission(input: AcceptAnimeSubmissionInput!): AcceptAnimeSubmissionPayload ~
+  acceptCharacterSubmission(input: AcceptCharacterSubmissionInput!): AcceptCharacterSubmissionPayload ~
+  acceptCreateAnime(input: AcceptCreateAnimeInput!): AcceptCreateAnimePayload ~
+  acceptCreateCard(input: AcceptCreateCardInput!): AcceptCreateCardPayload ~
+  acceptCreateManga(input: AcceptCreateMangaInput!): AcceptCreateMangaPayload ~
+  acceptCreateMangaChapter(input: AcceptCreateMangaChapterInput!): AcceptCreateMangaChapterPayload ~
+  acceptCreateTeam(input: AcceptCreateTeamInput!): AcceptCreateTeamPayload ~
+  acceptDeleteMangaChapter(input: AcceptDeleteMangaChapterInput!): AcceptDeleteMangaChapterPayload ~
+  acceptGuildMemberRequest(input: AcceptGuildMemberRequestInput!): AcceptGuildMemberRequestPayload ~
+  acceptMangaSubmission(input: AcceptMangaSubmissionInput!): AcceptMangaSubmissionPayload ~
+  acceptPersonSubmission(input: AcceptPersonSubmissionInput!): AcceptPersonSubmissionPayload ~
+  acceptTeamMemberRequest(input: AcceptTeamMemberRequestInput!): AcceptTeamMemberRequestPayload ~
+  acceptUpdateCard(input: AcceptUpdateCardInput!): AcceptUpdateCardPayload ~
+  acceptUpdateMangaChapter(input: AcceptUpdateMangaChapterInput!): AcceptUpdateMangaChapterPayload ~
+  bulkDeleteConversationMessages(input: BulkDeleteConversationMessagesInput!): BulkDeleteConversationMessagesPayload ~
+  bulkMoveUserBookmarksToCollection(input: BulkMoveUserBookmarksToCollectionInput!): BulkMoveUserBookmarksToCollectionPayload ~
+  bulkUpdateUserCardLock(input: BulkUpdateUserCardLockInput!): BulkUpdateUserCardLockPayload ~
+  checkCardDrop(input: CheckCardDropInput!): CheckCardDropPayload ~
+  claimCardDrop(input: ClaimCardDropInput!): ClaimCardDropPayload ~
+  completeTask(input: CompleteTaskInput!): CompleteTaskPayload ~
+  createAnimeEpisodeTranslation(input: CreateAnimeEpisodeTranslationInput!): CreateAnimeEpisodeTranslationPayload ~
+  createCollectible(input: CreateCollectibleInput!): CreateCollectiblePayload ~
+  createCollectibleOrder(input: CreateCollectibleOrderInput!): CreateCollectibleOrderPayload ~
+  createComment(input: CreateCommentInput!): CreateCommentPayload ~
+  createConversation(input: CreateConversationInput!): CreateConversationPayload ~
+  createConversationInvite(input: CreateConversationInviteInput!): CreateConversationInvitePayload ~
+  createConversationMessage(input: CreateConversationMessageInput!): CreateConversationMessagePayload ~
+  createEmoji(input: CreateEmojiInput!): CreateEmojiPayload ~
+  createEvent(input: CreateEventInput!): CreateEventPayload ~
+  createGuild(input: CreateGuildInput!): CreateGuildPayload ~
+  createLink(input: CreateLinkInput!): CreateLinkPayload ~
+  createMangaExternalSource(input: CreateMangaExternalSourceInput!): CreateMangaExternalSourcePayload ~
+  createPost(input: CreatePostInput!): CreatePostPayload ~
+  createPostNotification(input: CreatePostNotificationInput!): CreatePostNotificationPayload ~
+  createRedemption(input: CreateRedemptionInput!): CreateRedemptionPayload ~
+  createReport(input: CreateReportInput!): CreateReportPayload ~
+  createSticker(input: CreateStickerInput!): CreateStickerPayload ~
+  createUserBookmarkCollection(input: CreateUserBookmarkCollectionInput!): CreateUserBookmarkCollectionPayload ~
+  declineAnimeSubmission(input: DeclineAnimeSubmissionInput!): DeclineAnimeSubmissionPayload ~
+  declineCharacterSubmission(input: DeclineCharacterSubmissionInput!): DeclineCharacterSubmissionPayload ~
+  declineCreateAnime(input: DeclineCreateAnimeInput!): DeclineCreateAnimePayload ~
+  declineCreateCard(input: DeclineCreateCardInput!): DeclineCreateCardPayload ~
+  declineCreateManga(input: DeclineCreateMangaInput!): DeclineCreateMangaPayload ~
+  declineCreateMangaChapter(input: DeclineCreateMangaChapterInput!): DeclineCreateMangaChapterPayload ~
+  declineCreateTeam(input: DeclineCreateTeamInput!): DeclineCreateTeamPayload ~
+  declineDeleteMangaChapter(input: DeclineDeleteMangaChapterInput!): DeclineDeleteMangaChapterPayload ~
+  declineGuildMemberRequest(input: DeclineGuildMemberRequestInput!): DeclineGuildMemberRequestPayload ~
+  declineMangaSubmission(input: DeclineMangaSubmissionInput!): DeclineMangaSubmissionPayload ~
+  declinePersonSubmission(input: DeclinePersonSubmissionInput!): DeclinePersonSubmissionPayload ~
+  declineTeamMemberRequest(input: DeclineTeamMemberRequestInput!): DeclineTeamMemberRequestPayload ~
+  declineUpdateCard(input: DeclineUpdateCardInput!): DeclineUpdateCardPayload ~
+  declineUpdateMangaChapter(input: DeclineUpdateMangaChapterInput!): DeclineUpdateMangaChapterPayload ~
+  deleteAnimeVote(input: DeleteAnimeVoteInput!): DeleteAnimeVotePayload ~
+  deleteCardVote(input: DeleteCardVoteInput!): DeleteCardVotePayload ~
+  deleteComment(input: DeleteCommentInput!): DeleteCommentPayload ~
+  deleteCommentVote(input: DeleteCommentVoteInput!): DeleteCommentVotePayload ~
+  deleteConversationAvatar(input: DeleteConversationAvatarInput!): DeleteConversationAvatarPayload ~
+  deleteConversationInvite(input: DeleteConversationInviteInput!): DeleteConversationInvitePayload ~
+  deleteConversationMessageReaction(input: DeleteConversationMessageReactionInput!): DeleteConversationMessageReactionPayload ~
+  deleteConversationWallpaper(input: DeleteConversationWallpaperInput!): DeleteConversationWallpaperPayload ~
+  deleteGuildAvatar(input: DeleteGuildAvatarInput!): DeleteGuildAvatarPayload ~
+  deleteGuildBanner(input: DeleteGuildBannerInput!): DeleteGuildBannerPayload ~
+  deleteGuildMember(input: DeleteGuildMemberInput!): DeleteGuildMemberPayload ~
+  deleteMangaBranch(input: DeleteMangaBranchInput!): DeleteMangaBranchPayload ~
+  deleteMangaExternalSource(input: DeleteMangaExternalSourceInput!): DeleteMangaExternalSourcePayload ~
+  deleteMangaVote(input: DeleteMangaVoteInput!): DeleteMangaVotePayload ~
+  deleteTeamAvatar(input: DeleteTeamAvatarInput!): DeleteTeamAvatarPayload ~
+  deleteTeamBanner(input: DeleteTeamBannerInput!): DeleteTeamBannerPayload ~
+  deleteTeamMember(input: DeleteTeamMemberInput!): DeleteTeamMemberPayload ~
+  deleteUserAvatar(input: DeleteUserAvatarInput!): DeleteUserAvatarPayload ~
+  deleteUserBanner(input: DeleteUserBannerInput!): DeleteUserBannerPayload ~
+  deleteUserBookmark(input: DeleteUserBookmarkInput!): DeleteUserBookmarkPayload ~
+  deleteUserBookmarkCollection(input: DeleteUserBookmarkCollectionInput!): DeleteUserBookmarkCollectionPayload ~
+  depositGuildPoints(input: DepositGuildPointsInput!): DepositGuildPointsPayload ~
+  equipConversationCollectibleWallpaper(input: EquipConversationCollectibleWallpaperInput!): EquipConversationCollectibleWallpaperPayload ~
+  equipUserAvatar(input: EquipUserAvatarInput!): EquipUserAvatarPayload ~
+  forgeCards(input: ForgeCardInput!): ForgeCardsPayload ~
+  giveUserAchievement(input: GiveUserAchievementInput!): GiveUserAchievementPayload ~
+  iDontWantToPlayWithYouAnymore(input: DeleteUserWaifuInput!): IDontWantToPlayWithYouAnymorePayload ~
+  importUserBookmarkFromShikimori(input: ImportUserBookmarkFromShikimoriInput!): ImportUserBookmarkFromShikimoriPayload ~
+  inLoveAsInWar(input: FailUserWaifuInput!): InLoveAsInWarPayload ~
+  inviteFriendInConversation(input: InviteFriendInConversationInput!): InviteFriendInConversationPayload ~
+  joinConversationInvite(input: JoinConversationInviteInput!): JoinConversationInvitePayload ~
+  kickConversationParticipant(input: KickConversationParticipantInput!): KickConversationParticipantPayload ~
+  mergeUserAccounts(input: MergeUserAccountsInput!): MergeUserAccountsPayload ~
+  pinComment(input: PinCommentInput!): PinCommentPayload ~
+  publishPost(input: PublishPostInput!): PublishPostPayload ~
+  reactConversationMessage(input: ReactConversationMessageInput!): ReactConversationMessagePayload ~
+  readConversationMessage(input: ReadConversationMessageInput!): ReadConversationMessagePayload ~
+  readMangaChapter(input: ReadMangaChapterInput!): ReadMangaChapterPayload ~
+  redeemRedemption(input: RedeemRedemptionInput!): RedeemRedemptionPayload ~
+  requestCreateCard(input: RequestCreateCardInput!): RequestCreateCardPayload ~
+  requestCreateManga(input: RequestCreateMangaInput!): RequestCreateMangaPayload ~
+  requestCreateMangaChapter(input: RequestCreateMangaChapterInput!): RequestCreateMangaChapterPayload ~
+  requestCreateTeam(input: RequestCreateTeamInput!): RequestCreateTeamPayload ~
+  requestDeleteManga(input: RequestDeleteMangaInput!): RequestDeleteMangaPayload ~
+  requestDeleteMangaChapter(input: RequestDeleteMangaChapterInput!): RequestDeleteMangaChapterPayload ~
+  requestGuildMember(input: RequestGuildMemberInput!): RequestGuildMemberPayload ~
+  requestParseMangaExternalSource(input: RequestParseMangaExternalSourceInput!): RequestParseMangaExternalSourcePayload ~
+  requestTeamMember(input: RequestTeamMemberInput!): RequestTeamMemberPayload ~
+  requestUpdateCard(input: RequestUpdateCardInput!): RequestUpdateCardPayload ~
+  requestUpdateMangaChapter(input: RequestUpdateMangaChapterInput!): RequestUpdateMangaChapterPayload ~
+  resolveConversationInvite(input: ResolveConversationInviteInput!): ResolveConversationInvitePayload ~
+  resolveReport(input: ResolveReportInput!): ResolveReportPayload ~
+  resolveReportGroup(input: ResolveReportGroupInput!): ResolveReportGroupPayload ~
+  resolveTicket(input: ResolveTicketInput!): ResolveTicketPayload ~
+  restoreForge(input: RestoreForgeInput!): RestoreForgePayload ~
+  suggestAnimeSubmission(input: SuggestAnimeSubmissionInput!): SuggestAnimeSubmissionPayload ~
+  suggestCharacterSubmission(input: SuggestCharacterSubmissionInput!): SuggestCharacterSubmissionPayload ~
+  suggestMangaSubmission(input: SuggestMangaSubmissionInput!): SuggestMangaSubmissionPayload ~
+  suggestPersonSubmission(input: SuggestPersonSubmissionInput!): SuggestPersonSubmissionPayload ~
+  topUpUserCredits(input: TopUpUserCreditsInput!): TopUpUserCreditsPayload ~
+  trackSearchQuery(input: TrackSearchQueryInput!): TrackSearchQueryPayload ~
+  transferConversation(input: TransferConversationInput!): TransferConversationPayload ~
+  transferGuild(input: TransferGuildInput!): TransferGuildPayload ~
+  transferTeam(input: TransferTeamInput!): TransferTeamPayload ~
+  typingConversation(input: TypingConversationInput!): TypingConversationPayload ~
+  unpinComment(input: UnpinCommentInput!): UnpinCommentPayload ~
+  updateAnime(input: UpdateAnimeInput!): UpdateAnimePayload ~
+  updateCollectible(input: UpdateCollectibleInput!): UpdateCollectiblePayload ~
+  updateComment(input: UpdateCommentInput!): UpdateCommentPayload ~
+  updateConversation(input: UpdateConversationInput!): UpdateConversationPayload ~
+  updateConversationMessage(input: UpdateConversationMessageInput!): UpdateConversationMessagePayload ~
+  updateConversationParticipantPermissions(input: UpdateConversationParticipantPermissionsInput!): UpdateConversationParticipantPermissionsPayload ~
+  updateConversationPermissions(input: UpdateConversationPermissionsInput!): UpdateConversationPermissionsPayload ~
+  updateConversationTheme(input: UpdateConversationThemeInput!): UpdateConversationThemePayload ~
+  updateEmoji(input: UpdateEmojiInput!): UpdateEmojiPayload ~
+  updateGuild(input: UpdateGuildInput!): UpdateGuildPayload ~
+  updateGuildMember(input: UpdateGuildMemberInput!): UpdateGuildMemberPayload ~
+  updateManga(input: UpdateMangaInput!): UpdateMangaPayload ~
+  updateMangaExternalSource(input: UpdateMangaExternalSourceInput!): UpdateMangaExternalSourcePayload ~
+  updateMangaReaderSetting(input: UpdateMangaReaderSettingInput!): UpdateMangaReaderSettingPayload ~
+  updatePost(input: UpdatePostInput!): UpdatePostPayload ~
+  updateSticker(input: UpdateStickerInput!): UpdateStickerPayload ~
+  updateTeam(input: UpdateTeamInput!): UpdateTeamPayload ~
+  updateTeamMember(input: UpdateTeamMemberInput!): UpdateTeamMemberPayload ~
+  updateUser(input: UpdateUserInput!): UpdateUserPayload ~
+  updateUserBookmark(input: UpdateUserBookmarkInput!): UpdateUserBookmarkPayload ~
+  updateUserBookmarkCollection(input: UpdateUserBookmarkCollectionInput!): UpdateUserBookmarkCollectionPayload ~
+  updateUserPreferences(input: UpdateUserPreferencesInput!): UpdateUserPreferencesPayload ~
+  updateUserStatus(input: UpdateUserStatusInput!): UpdateUserStatusPayload ~
+  uploadAchievementLevelCover(input: UploadAchievementLevelCoverInput!): UploadAchievementLevelCoverPayload ~
+  uploadAnimeEpisodeCover(input: UploadAnimeEpisodeCoverInput!): UploadAnimeEpisodeCoverPayload ~
+  uploadCollectibleImage(input: UploadCollectibleImageInput!): UploadCollectibleImagePayload ~
+  uploadConversationAvatar(input: UploadConversationAvatarInput!): UploadConversationAvatarPayload ~
+  uploadEmojiImage(input: UploadEmojiImageInput!): UploadEmojiImagePayload ~
+  uploadGuildAvatar(input: UploadGuildAvatarInput!): UploadGuildAvatarPayload ~
+  uploadGuildBanner(input: UploadGuildBannerInput!): UploadGuildBannerPayload ~
+  uploadStickerImage(input: UploadStickerImageInput!): UploadStickerImagePayload ~
+  uploadTeamAvatar(input: UploadTeamAvatarInput!): UploadTeamAvatarPayload ~
+  uploadTeamBanner(input: UploadTeamBannerInput!): UploadTeamBannerPayload ~
+  uploadUserAvatar(input: UploadUserAvatarInput!): UploadUserAvatarPayload ~
+  uploadUserBanner(input: UploadUserBannerInput!): UploadUserBannerPayload ~
+  viewAd(input: ViewAdInput!): ViewAdPayload ~
+  viewAnime(input: ViewAnimeInput!): ViewAnimePayload ~
+  viewCard(input: ViewCardInput!): ViewCardPayload ~
+  viewGuild(input: ViewGuildInput!): ViewGuildPayload ~
+  viewManga(input: ViewMangaInput!): ViewMangaPayload ~
+  viewPost(input: ViewPostInput!): ViewPostPayload ~
+  viewTeam(input: ViewTeamInput!): ViewTeamPayload ~
+  voteAnime(input: VoteAnimeInput!): VoteAnimePayload ~
+  voteCard(input: VoteCardInput!): VoteCardPayload ~
+  voteComment(input: VoteCommentInput!): VoteCommentPayload ~
+  voteManga(input: VoteMangaInput!): VoteMangaPayload ~
+  watchAnimeEpisodeTranslation(input: WatchAnimeEpisodeTranslationInput!): WatchAnimeEpisodeTranslationPayload ~
+  youWillBeMyWaifu(input: CreateUserWaifusInput!): YouWillBeMyWaifuPayload ~
+}
+
+type Subscription {
+  conversationMessageBulkDeleted: ConversationMessageBulkDeletedPayload ~
+  conversationMessageReactionCreated: ConversationMessageReaction
+  conversationMessageReactionDeleted: ConversationMessageReactionDeletedPayload ~
+  conversationMessageRead: ConversationMessageReadPayload ~
+  conversationMessageUpdated: ConversationMessage
+  conversationParticipantInvited: ConversationParticipantInvitedPayload ~
+  conversationTyping: ConversationTypingPayload ~
+  ticketUpdated(type: [TicketType!], status: [TicketStatus!]): Ticket
+}
+
+type (union Anime|Manga) {
+  id: ?
+}
+
+type (union EmojiSet|StickerSet) {
+  id: ?
+}
+
+type AcceptAnimeSubmissionPayload {
+  anime: Anime? ~
+}
+
+type AcceptCharacterSubmissionPayload {
+  character: Character? ~
+}
+
+type AcceptCreateAnimePayload {
+  success: ?
+}
+
+type AcceptCreateCardPayload {
+  success: ?
+}
+
+type AcceptCreateMangaChapterPayload {
+  mangaChapter: MangaChapter? ~
+}
+
+type AcceptCreateMangaPayload {
+  success: ?
+}
+
+type AcceptCreateTeamPayload {
+  team: Team
+}
+
+type AcceptDeleteMangaChapterPayload {
+  success: ?
+}
+
+type AcceptGuildMemberRequestPayload {
+  success: ?
+}
+
+type AcceptMangaSubmissionPayload {
+  manga: Manga? ~
+}
+
+type AcceptPersonSubmissionPayload {
+  person: Person? ~
+}
+
+type AcceptTeamMemberRequestPayload {
+  success: ?
+}
+
+type AcceptUpdateCardPayload {
+  success: ?
+}
+
+type AcceptUpdateMangaChapterPayload {
+  mangaChapter: MangaChapter? ~
+}
+
+type Achievement {
+  category: ?
+  id: ?
+  levels: AchievementLevel
+  secret: ?
+  slug: ?
+  type: ?
+}
+
+type AchievementInsightsPayload {
+  achievementId: ?
+  completed: ?
+  globalPercent: ?
+  id: ?
+  level: AchievementLevel
+  secret: ?
+}
+
+type AchievementLevel {
+  achievementId: ?
+  cover: Image
+  description: TiptapNodeUnion
+  experience: ?
+  globalPercent: ?
+  id: ?
+  level: ?
+  objective: ?
+  points: ?
+  threshold: ?
+  titles: Title? ~
+}
+
+type AchievementsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type ActivitiesPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type Activity {
+  createdAt: ?
+  entity: Node
+  id: ?
+  meta: ActivityMetaBookmarkStatus|ActivityMetaBookmark|ActivityMetaChapters|ActivityMetaEpisodes
+  type: ?
+  user: User? ~
+}
+
+type ActivityMetaBookmark {
+  numbers: ?
+}
+
+type ActivityMetaBookmarkStatus {
+  status: ?
+}
+
+type ActivityMetaChapters {
+  numbers: ?
+}
+
+type ActivityMetaEpisodes {
+  numbers: ?
+}
+
+type AdMediaImage {
+  blurhash: ?
+  url: ?
+}
+
+type AdMediaVideo {
+  url: ?
+}
+
+type AdPayload {
+  id: ?
+  link: ?
+  media: AdMediaImage|AdMediaVideo
+}
+
+type AddItem? {
+  content: ?
+  lang: ?
+  service: ?
+  type: ?
+  url: ?
+}
+
+type AddUserCard? {
+  card: Card
+  cardId: ?
+  locked: ?
+  modifier: ?
+  quantity: ?
+  shard: ?
+  userId: ?
+}
+
+type AlternativeName? {
+  content: ?
+  lang: ?
+}
+
+type Anime {
+  alternativeNames: AlternativeName? ~
+  applicationId: ?
+  banner: Image
+  blockedInCountries: ?
+  commentsEnabled: ?
+  completedOn: ?
+  containExplicitThemes: ?
+  cover: Image
+  formats: ?
+  id: ?
+  imdbId: ?
+  labels: Label
+  lastEpisodeAt: ?
+  licensees: Studio
+  links: Link? ~
+  localizations: Localization? ~
+  mainCharacters: Character
+  malId: ?
+  originCountry: ?
+  originalName: OriginalName? ~
+  rating: ?
+  releasedOn: ?
+  score: ?
+  series: Series
+  slug: ?
+  source: ?
+  status: ?
+  studios: Studio
+  titles: Title? ~
+  translitionStatus: ?
+  type: ?
+  updatedAt: ?
+  viewerBookmark: UserBookmark
+}
+
+type Anime? {
+  cover: Image
+  id: ?
+  originalName: OriginalName? ~
+  slug: ?
+  titles: Title? ~
+}
+
+type AnimeCharactersPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type AnimeEpisode {
+  anime: Anime? ~
+  cover: Image
+  createdAt: ?
+  creator: User
+  id: ?
+  name: ?
+  number: ?
+  slug: ?
+  translations: AnimeEpisodeTranslationEmbed
+}
+
+type AnimeEpisodeTranslation {
+  anime: Anime
+  createdAt: ?
+  embedSource: ?
+  embedUrl: ?
+  episode: AnimeEpisode
+  id: ?
+  quality: ?
+  teams: Team
+  type: ?
+  uploader: User
+  views: ?
+}
+
+type AnimeEpisodeTranslationEmbed {
+  createdAt: ?
+  embedSource: ?
+  embedUrl: ?
+  id: ?
+  teams: Team
+  type: ?
+}
+
+type AnimeEpisodeTranslationWatchesCountInsightPayload {
+  count: ?
+  pointAt: ?
+}
+
+type AnimeEpisodeTranslationsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type AnimeEpisodesPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type AnimePayload {
+  alternativeNames: AlternativeName? ~
+  applicationId: ?
+  banner: Image
+  commentsEnabled: ?
+  completedOn: ?
+  containExplicitThemes: ?
+  cover: Image
+  episodeDuration: ?
+  episodes: ?
+  episodesAired: ?
+  formats: ?
+  id: ?
+  imdbId: ?
+  isLicensed: ?
+  labels: Label
+  links: Link? ~
+  localizations: Localization? ~
+  mainCharacters: Character
+  mainStaff: MainStaff? ~
+  malId: ?
+  originCountry: ?
+  originalName: OriginalName? ~
+  pinnedComment: Comment
+  rating: ?
+  recommendations: Anime
+  relations: Relation? ~
+  releasedOn: ?
+  score: ?
+  scoreDistributions: ScoreDistribution? ~
+  season: ?
+  series: Series
+  slug: ?
+  source: ?
+  status: ?
+  studios: Studio
+  titles: Title? ~
+  translitionStatus: ?
+  type: ?
+  userBookmarkCollectionDistributions: UserBookmarkCollectionDistribution? ~
+  viewerBookmark: UserBookmark
+  viewerBookmarkFriends: ViewerBookmarkFriend? ~
+  viewerInBlockedCountry: ?
+  viewerVote: ?
+  views: ?
+}
+
+type AnimeRelationsPayload {
+  edges: Edge? ~
+}
+
+type AnimeStaffPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type AnimeSubmission {
+  anime: Anime? ~
+  changes: AnimeSubmissionChangeUnion
+  createdAt: ?
+  id: ?
+  meta: Meta? ~
+  provider: User
+  status: ?
+  updatedAt: ?
+}
+
+type AnimeSubmissionAlternativeNamesChange {
+  addItems: AddItem? ~
+  oldValue: OldValue? ~
+  removeItems: RemoveItem? ~
+}
+
+type AnimeSubmissionBannerChange {
+  newValue: Image
+  oldValue: Image
+}
+
+type AnimeSubmissionBlockedInCountryVecChange {
+  addItems: ?
+  oldValue: ?
+  removeItems: ?
+}
+
+type AnimeSubmissionCharactersChange {
+  removeItems: RemoveItem? ~
+  updateItems: UpdateItem? ~
+}
+
+type AnimeSubmissionCompletedOnChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type AnimeSubmissionCoverChange {
+  newValue: Image
+  oldValue: Image
+}
+
+type AnimeSubmissionDescriptionsChange {
+  updateItems: UpdateItem? ~
+}
+
+type AnimeSubmissionFormatVecChange {
+  addItems: ?
+  oldValue: ?
+  removeItems: ?
+}
+
+type AnimeSubmissionImdbIdChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type AnimeSubmissionLabelsChange {
+  addItems: Label
+  oldValue: Label
+  removeItems: Label
+}
+
+type AnimeSubmissionLicenseeChange {
+  addItems: Studio
+  oldValue: Studio
+  removeItems: Studio
+}
+
+type AnimeSubmissionLinkVecChange {
+  addItems: AddItem? ~
+  oldValue: OldValue? ~
+  removeItems: RemoveItem? ~
+}
+
+type AnimeSubmissionMalIdChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type AnimeSubmissionOriginCountryChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type AnimeSubmissionOriginalNameChange {
+  newValue: NewValue? ~
+  oldValue: OldValue? ~
+}
+
+type AnimeSubmissionRatingChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type AnimeSubmissionRelationsChange {
+  removeItems: RemoveItem? ~
+  updateItems: UpdateItem? ~
+}
+
+type AnimeSubmissionReleasedOnChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type AnimeSubmissionSeriesChange {
+  addItems: Series
+  oldValue: Series
+  removeItems: Series
+}
+
+type AnimeSubmissionSourceChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type AnimeSubmissionStaffChange {
+  removeItems: RemoveItem? ~
+  updateItems: UpdateItem? ~
+}
+
+type AnimeSubmissionStatusChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type AnimeSubmissionStudioChange {
+  addItems: Studio
+  oldValue: Studio
+  removeItems: Studio
+}
+
+type AnimeSubmissionTitlesChange {
+  addItems: AddItem? ~
+  oldValue: OldValue? ~
+  removeItems: RemoveItem? ~
+}
+
+type AnimeSubmissionTranslitionStatusChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type AnimeSubmissionTypeChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type AnimeSubmissionsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+  totalCount: ?
+}
+
+type AnimeViewsCountInsightPayload {
+  count: ?
+  pointAt: ?
+}
+
+type AnimesPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type Attr? {
+  height: ?
+  href: ?
+  id: ?
+  label: ?
+  language: ?
+  level: ?
+  src: ?
+  start: ?
+  unicode: ?
+  url: ?
+  width: ?
+}
+
+type AvailableCardSlotsPayload {
+  animated: ?
+  rank: ?
+}
+
+type BookmarkAnimePreview? {
+  containExplicitThemes: ?
+  cover: Image
+  formats: ?
+  id: ?
+  originalName: OriginalName? ~
+  rating: ?
+  slug: ?
+  status: ?
+  titles: Title? ~
+  type: ?
+  viewerBookmark: UserBookmark
+}
+
+type BookmarkEntityCollectionDistribution? {
+  collectionId: ?
+  count: ?
+  entityType: ?
+}
+
+type BookmarkMangaPreview? {
+  containExplicitThemes: ?
+  cover: Image
+  formats: ?
+  id: ?
+  originalName: OriginalName? ~
+  rating: ?
+  slug: ?
+  status: ?
+  titles: Title? ~
+  type: ?
+  viewerBookmark: UserBookmark
+}
+
+type Bookmarkable {
+  id: ?
+}
+
+type BranchActivityVolume {
+  ranges: Range? ~
+  volume: ?
+}
+
+type BulkDeleteConversationMessagesPayload {
+  success: ?
+}
+
+type BulkMoveUserBookmarksToCollectionPayload {
+  success: ?
+}
+
+type BulkUpdateUserCardLockPayload {
+  success: ?
+}
+
+type Card {
+  animated: ?
+  audio: ?
+  author: User
+  character: Character? ~
+  colors: ?
+  createdAt: ?
+  description: TiptapNodeUnion
+  entity: Anime|Manga
+  explicit: ?
+  featured: ?
+  id: ?
+  image: Image
+  labels: Label
+  newOwners: User
+  owners: ?
+  rank: ?
+  slug: ?
+  titles: Title? ~
+  upvotes: ?
+  viewerCards: ViewerCard? ~
+  viewerVoteDirection: ?
+  views: ?
+  wishes: ?
+}
+
+type Card? {
+  animated: ?
+  explicit: ?
+  id: ?
+  image: Image
+  rank: ?
+  slug: ?
+  titles: Title? ~
+}
+
+type CardDeck {
+  createdAt: ?
+  explicit: ?
+  id: ?
+  quantity: ?
+  slug: ?
+  titles: Title? ~
+  type: ?
+  views: ?
+}
+
+type CardsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type Chapter? {
+  id: ?
+  name: ?
+  number: ?
+  slug: ?
+  volume: ?
+}
+
+type Character {
+  cover: Image
+  gender: ?
+  id: ?
+  malId: ?
+  name: ?
+  slug: ?
+  titles: Title? ~
+  updatedAt: ?
+  viewerWaifuRelation: ?
+}
+
+type Character? {
+  cover: Image
+  id: ?
+  name: ?
+  slug: ?
+  titles: Title? ~
+}
+
+type CharacterSubmission {
+  changes: CharacterSubmissionChangeUnion
+  character: Character? ~
+  createdAt: ?
+  id: ?
+  meta: Meta? ~
+  provider: User
+  status: ?
+  updatedAt: ?
+}
+
+type CharacterSubmissionCoverChange {
+  newValue: Image
+  oldValue: Image
+}
+
+type CharacterSubmissionGenderChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type CharacterSubmissionMalIdChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type CharacterSubmissionNameChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type CharacterSubmissionTitlesChange {
+  addItems: AddItem? ~
+  oldValue: OldValue? ~
+  removeItems: RemoveItem? ~
+}
+
+type CharacterSubmissionsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+  totalCount: ?
+}
+
+type CheckCardDropPayload {
+  canClaim: ?
+}
+
+type ClaimCardDropPayload {
+  dropProbability: ?
+  preview: Preview? ~
+}
+
+type Collectible {
+  basePrice: ?
+  createdAt: ?
+  description: TiptapNodeUnion
+  discountEndAt: ?
+  discountStartAt: ?
+  discountType: ?
+  discountValue: ?
+  entity: EmojiSet|StickerSet
+  id: ?
+  image: Image
+  price: ?
+  purchaseRestriction: ?
+  quantity: ?
+  rating: ?
+  recent: ?
+  slug: ?
+  subscriptionDiscountType: ?
+  subscriptionDiscountValue: ?
+  subscriptionPrice: ?
+  titles: Title? ~
+  type: ?
+  updatedAt: ?
+  viewerCollectible: ViewerCollectible? ~
+  visible: ?
+}
+
+type CollectibleBundle {
+  banner: Image
+  basePrice: ?
+  collectibles: Collectible
+  cover: Image
+  createdAt: ?
+  discountEndAt: ?
+  discountStartAt: ?
+  discountType: ?
+  discountValue: ?
+  id: ?
+  price: ?
+  purchaseRestriction: ?
+  quantity: ?
+  rating: ?
+  slug: ?
+  subscriptionDiscountType: ?
+  subscriptionDiscountValue: ?
+  subscriptionPrice: ?
+  titles: Title? ~
+  visible: ?
+}
+
+type CollectibleBundlesPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type CollectibleCoupon {
+  code: ?
+  id: ?
+}
+
+type CollectibleCouponsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type CollectiblesPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type Comment {
+  author: User
+  commentable: Node
+  commentableId: ?
+  content: TiptapNodeUnion
+  createdAt: ?
+  deletedAt: ?
+  depth: ?
+  downvotes: ?
+  id: ?
+  parentId: ?
+  replies: Comment
+  repliesCount: ?
+  threadId: ?
+  updatedAt: ?
+  upvotes: ?
+  viewerCanDelete: ?
+  viewerCanUpdate: ?
+  viewerDidAuthor: ?
+  viewerVoteDirection: ?
+}
+
+type CommentsCountTrendingInsightPayload {
+  count: ?
+  pointAt: ?
+}
+
+type CommentsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type CompleteTaskPayload {
+  success: ?
+}
+
+type Conversation {
+  about: TiptapNodeUnion
+  avatar: Image
+  id: ?
+  lastMessage: ConversationMessage
+  lastMessageCursor: ?
+  lastReadMessageCursor: ?
+  name: ?
+  participantUser: User
+  participants: ?
+  restrictedPermissions: ?
+  slug: ?
+  theme: ?
+  type: ?
+  viewerIsOwner: ?
+  viewerParticipant: ViewerParticipant? ~
+  wallpaper: Image
+}
+
+type Conversation? {
+  avatar: Image
+  id: ?
+  name: ?
+  type: ?
+}
+
+type ConversationInvite {
+  admin: User
+  createdAt: ?
+  expiredAt: ?
+  id: ?
+  name: ?
+  needApproval: ?
+  participants: ?
+  quantity: ?
+  requests: ?
+  slug: ?
+  updatedAt: ?
+  url: ?
+}
+
+type ConversationInviteParticipantsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type ConversationInvitePreviewPayload {
+  about: TiptapNodeUnion
+  avatar: Image
+  name: ?
+  participants: ?
+}
+
+type ConversationInvitesPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type ConversationMessage {
+  content: TiptapNodeUnion
+  conversation: Conversation? ~
+  conversationId: ?
+  createdAt: ?
+  cursor: ?
+  id: ?
+  isStickerOrEmojis: ?
+  reactions: ConversationMessageReactionDistribution
+  replies: ?
+  reply: ConversationMessage
+  type: ?
+  updatedAt: ?
+  user: User
+  viewerCanDelete: ?
+  viewerCanUpdate: ?
+  viewerDidAuthor: ?
+}
+
+type ConversationMessageBulkDeletedPayload {
+  conversationId: ?
+  messageIds: ?
+}
+
+type ConversationMessageReaction {
+  conversationId: ?
+  createdAt: ?
+  emoji: Emoji
+  messageId: ?
+  user: User
+  viewerHasReacted: ?
+}
+
+type ConversationMessageReactionDeletedPayload {
+  conversationId: ?
+  emojiId: ?
+  isViewer: ?
+  messageId: ?
+  userId: ?
+}
+
+type ConversationMessageReactionDistribution {
+  count: ?
+  emoji: Emoji
+  previewUsers: User
+  viewerHasReacted: ?
+}
+
+type ConversationMessageReadPayload {
+  conversationId: ?
+  lastReadMessageCursor: ?
+}
+
+type ConversationMessagesPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type ConversationParticipant {
+  conversationId: ?
+  isAdmin: ?
+  permissions: ?
+  restrictedPermissions: ?
+  title: ?
+  user: User
+  userId: ?
+}
+
+type ConversationParticipant? {
+  conversationId: ?
+}
+
+type ConversationParticipantInvitedPayload {
+  conversation: Conversation
+}
+
+type ConversationParticipantsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type ConversationTypingPayload {
+  conversationId: ?
+  type: ?
+  user: User
+}
+
+type ConversationsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type CreateAnimeEpisodeTranslationPayload {
+  embed: AnimeEpisodeTranslationEmbed
+}
+
+type CreateCollectibleOrderPayload {
+  success: ?
+}
+
+type CreateCollectiblePayload {
+  collectible: Collectible
+}
+
+type CreateCommentPayload {
+  comment: Comment
+}
+
+type CreateConversationInvitePayload {
+  invite: ConversationInvite
+}
+
+type CreateConversationMessagePayload {
+  message: ConversationMessage
+}
+
+type CreateConversationPayload {
+  conversation: Conversation
+}
+
+type CreateEmojiPayload {
+  emoji: Emoji
+}
+
+type CreateEventPayload {
+  event: Event
+}
+
+type CreateGuildPayload {
+  guild: Guild? ~
+}
+
+type CreateLinkPayload {
+  link: Link
+}
+
+type CreateMangaExternalSourcePayload {
+  externalSource: MangaExternalSource
+}
+
+type CreatePostNotificationPayload {
+  success: ?
+}
+
+type CreatePostPayload {
+  post: Post
+}
+
+type CreateRedemptionPayload {
+  redemption: Redemption
+}
+
+type CreateReportPayload {
+  report: Report
+}
+
+type CreateStickerPayload {
+  sticker: Sticker
+}
+
+type CreateUserBookmarkCollectionPayload {
+  collection: UserBookmarkCollection
+}
+
+type CurrentBan? {
+  createdAt: ?
+  expiredAt: ?
+  hideReason: ?
+  id: ?
+  moderator: User
+  permanented: ?
+  reason: ?
+}
+
+type DeclineAnimeSubmissionPayload {
+  success: ?
+}
+
+type DeclineCharacterSubmissionPayload {
+  success: ?
+}
+
+type DeclineCreateAnimePayload {
+  success: ?
+}
+
+type DeclineCreateCardPayload {
+  success: ?
+}
+
+type DeclineCreateMangaChapterPayload {
+  success: ?
+}
+
+type DeclineCreateMangaPayload {
+  success: ?
+}
+
+type DeclineCreateTeamPayload {
+  success: ?
+}
+
+type DeclineDeleteMangaChapterPayload {
+  success: ?
+}
+
+type DeclineGuildMemberRequestPayload {
+  success: ?
+}
+
+type DeclineMangaSubmissionPayload {
+  success: ?
+}
+
+type DeclinePersonSubmissionPayload {
+  success: ?
+}
+
+type DeclineTeamMemberRequestPayload {
+  success: ?
+}
+
+type DeclineUpdateCardPayload {
+  success: ?
+}
+
+type DeclineUpdateMangaChapterPayload {
+  success: ?
+}
+
+type DeleteAnimeVotePayload {
+  success: ?
+}
+
+type DeleteCardVotePayload {
+  success: ?
+}
+
+type DeleteCommentPayload {
+  success: ?
+}
+
+type DeleteCommentVotePayload {
+  success: ?
+}
+
+type DeleteConversationAvatarPayload {
+  success: ?
+}
+
+type DeleteConversationInvitePayload {
+  success: ?
+}
+
+type DeleteConversationMessageReactionPayload {
+  success: ?
+}
+
+type DeleteConversationWallpaperPayload {
+  success: ?
+}
+
+type DeleteGuildAvatarPayload {
+  success: ?
+}
+
+type DeleteGuildBannerPayload {
+  success: ?
+}
+
+type DeleteGuildMemberPayload {
+  success: ?
+}
+
+type DeleteMangaBranchPayload {
+  success: ?
+}
+
+type DeleteMangaExternalSourcePayload {
+  success: ?
+}
+
+type DeleteMangaVotePayload {
+  success: ?
+}
+
+type DeleteTeamAvatarPayload {
+  success: ?
+}
+
+type DeleteTeamBannerPayload {
+  success: ?
+}
+
+type DeleteTeamMemberPayload {
+  success: ?
+}
+
+type DeleteUserAvatarPayload {
+  success: ?
+}
+
+type DeleteUserBannerPayload {
+  success: ?
+}
+
+type DeleteUserBookmarkCollectionPayload {
+  success: ?
+}
+
+type DeleteUserBookmarkPayload {
+  success: ?
+}
+
+type DepositGuildPointsPayload {
+  addGuildPoints: ?
+  userId: ?
+}
+
+type Edge? {
+  cursor: ?
+  node: Achievement | Activity | Node? | AnimeEpisode | Anime | AnimeSubmission | Card | CharacterSubmission | CollectibleBundle | CollectibleCoupon | Collectible | ConversationInvite | ConversationMessage | ConversationParticipant | Conversation | Event | GuildMember | GuildPointsTransaction | Guild | Link | Manga | Post | MangaChapter | MangaExternalSource | MangaSubmission | Comment | PendingCard | PendingGuildMember | PendingMangaChapter | PendingTeamMember | PersonSubmission | Redemption | Report | TeamMember | TeamProject | Team | Ticket | UserBookmark | UserCard | SearchUser|SearchTeam|SearchGuild|SearchAnime|SearchManga|SearchStudio|SearchPerson|SearchCharacter ~
+}
+
+type Emoji {
+  id: ?
+  image: Image
+  position: ?
+  slug: ?
+  unicode: ?
+}
+
+type EmojiSet {
+  emojis: Emoji
+  highlight: Emoji
+  id: ?
+  titles: Title? ~
+}
+
+type Episode? {
+  id: ?
+  number: ?
+}
+
+type EquipConversationCollectibleWallpaperPayload {
+  wallpaper: Image
+}
+
+type EquipUserAvatarPayload {
+  avatar: Image
+}
+
+type Event {
+  cover: Image
+  id: ?
+  links: Link? ~
+  location: ?
+  minPrice: MinPrice? ~
+  slug: ?
+  startAt: ?
+  status: ?
+  title: ?
+  type: ?
+}
+
+type EventDistributionsPayload {
+  count: ?
+  pointOn: ?
+}
+
+type EventsPayload {
+  edges: Edge? ~
+  totalCount: ?
+}
+
+type ExperimentalSpotlightCreditsPayload {
+  id: ?
+  user: User
+}
+
+type ExperimentalSpotlightExperiencesPayload {
+  experience: ?
+  id: ?
+  user: User
+}
+
+type ExperimentalSpotlightLabelsPayload {
+  id: ?
+  label: Label
+  previewMangas: Manga
+}
+
+type ExperimentalSpotlightsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type ForgeCardsPayload {
+  addUserCards: AddUserCard? ~
+  newCards: NewCard? ~
+  removeUserCards: RemoveUserCard? ~
+  updateUserCards: UpdateUserCard? ~
+  userId: ?
+}
+
+type ForgeCardsSlotsPayload {
+  available: ?
+  baseSlots: ?
+  resetAt: ?
+  subscriptionSlots: ?
+  used: ?
+}
+
+type GiveUserAchievementPayload {
+  success: ?
+}
+
+type Guild {
+  avatar: Image
+  banner: Image
+  color: ?
+  createdAt: ?
+  description: TiptapNodeUnion
+  emoji: Emoji
+  experience: ?
+  id: ?
+  inviteOnly: ?
+  level: ?
+  maxMembers: ?
+  members: ?
+  name: ?
+  nearestRankGuilds: Guild
+  nextLevelExperience: ?
+  ownerId: ?
+  points: ?
+  rank: ?
+  regressions: ?
+  relations: Relation? ~
+  score: ?
+  slug: ?
+  tag: ?
+  updatedAt: ?
+  viewerCanManage: ?
+  viewerIsMember: ?
+  viewerIsOwner: ?
+  viewerMember: ViewerMember? ~
+}
+
+type Guild? {
+  color: ?
+  id: ?
+  level: ?
+  name: ?
+  slug: ?
+  tag: ?
+}
+
+type GuildMember {
+  createdAt: ?
+  experience: ?
+  guildId: ?
+  level: ?
+  permissions: ?
+  points: ?
+  role: ?
+  user: User
+  userId: ?
+  viewerCanKick: ?
+  viewerCanUpdate: ?
+}
+
+type GuildMemberTask {
+  completedAt: ?
+  progress: ?
+  task: Task
+  updatedAt: ?
+}
+
+type GuildMembersPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+  totalCount: ?
+}
+
+type GuildPointsTransaction {
+  amount: ?
+  createdAt: ?
+  entity: Node
+  id: ?
+  isGuild: ?
+  operationType: ?
+  type: ?
+  user: User
+}
+
+type GuildPointsTransactionsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type GuildTask {
+  completedAt: ?
+  progress: ?
+  task: Task
+  updatedAt: ?
+}
+
+type GuildsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+  totalCount: ?
+}
+
+type IDontWantToPlayWithYouAnymorePayload {
+  success: ?
+}
+
+type Image {
+  animation: ?
+  blurhash: ?
+  caption: ?
+  id: ?
+  original: Original? ~
+  resize(width: <literal:483>, height: <literal:690>, format: <literal:WEBP>, quality: <literal:75>): Resize? ~
+  variants: Variant? ~
+}
+
+type ImportUserBookmarkFromShikimoriPayload {
+  success: ?
+}
+
+type InLoveAsInWarPayload {
+  success: ?
+}
+
+type Invite? {
+  id: ?
+  name: ?
+  slug: ?
+}
+
+type InviteFriendInConversationPayload {
+  conversationParticipant: ConversationParticipant? ~
+}
+
+type JoinConversationInvitePayload {
+  conversationSlug: ?
+  needApproval: ?
+}
+
+type KickConversationParticipantPayload {
+  selfLeave: ?
+  success: ?
+}
+
+type Label {
+  alternativeNames: AlternativeName? ~
+  blockedInCountries: ?
+  cover: Image
+  depth: ?
+  description: TiptapNodeUnion
+  gender: ?
+  id: ?
+  rating: ?
+  rootId: ?
+  slug: ?
+  titles: Title? ~
+  type: ?
+  updatedAt: ?
+}
+
+type LastCard? {
+  card: Card? ~
+  modifier: ?
+  quantity: ?
+  shard: ?
+}
+
+type LastChapter? {
+  createdAt: ?
+  id: ?
+  name: ?
+  number: ?
+  slug: ?
+  volume: ?
+}
+
+type LastProject? {
+  entity: Anime|Manga
+  id: ?
+}
+
+type Level {
+  experience: ?
+  id: ?
+  number: ?
+  totalExperience: ?
+}
+
+type Link {
+  createdAt: ?
+  entity: Manga|Anime|MangaChapter|Post
+  id: ?
+  name: ?
+  owner: User
+  slug: ?
+  updatedAt: ?
+  url: ?
+  utmCampaign: ?
+  utmContent: ?
+  utmMedium: ?
+  utmSource: ?
+  utmTerm: ?
+  visits: ?
+}
+
+type Link? {
+  service: ?
+  title: ?
+  type: ?
+  url: ?
+}
+
+type LinkVisitsCountInsightPayload {
+  count: ?
+  pointAt: ?
+}
+
+type LinksPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+  totalCount: ?
+}
+
+type Localization? {
+  description: TiptapNodeUnion
+  lang: ?
+  name: ?
+}
+
+type MainGuild? {
+  emoji: Emoji
+  guild: Guild? | Guild ~
+  role: ?
+  tag: ?
+}
+
+type MainStaff? {
+  id: ?
+  person: Person
+  roles: ?
+}
+
+type Manga {
+  alternativeNames: AlternativeName? ~
+  applicationId: ?
+  banner: Image
+  blockedInCountries: ?
+  branches: MangaBranch
+  chapters: ?
+  commentsEnabled: ?
+  completedOn: ?
+  containExplicitThemes: ?
+  cover: Image
+  formats: ?
+  id: ?
+  isLicensed: ?
+  labels: Label
+  lastChapterAt: ?
+  lastChapters: LastChapter? ~
+  licensees: Studio
+  links: Link? ~
+  localizations: Localization? ~
+  mainCharacters: Character
+  malId: ?
+  muId: ?
+  originCountry: ?
+  originalName: OriginalName? ~
+  publishers: Studio
+  rating: ?
+  releasedOn: ?
+  score: ?
+  series: Series
+  slug: ?
+  source: ?
+  status: ?
+  titles: Title? ~
+  translitionStatus: ?
+  type: ?
+  updatedAt: ?
+  viewerBookmark: UserBookmark
+  viewerInBlockedCountry: ?
+}
+
+type Manga? {
+  cover: Image
+  id: ?
+  originalName: OriginalName? ~
+  slug: ?
+  titles: Title? ~
+}
+
+type MangaBookmarkChapterPayload {
+  id: ?
+  slug: ?
+}
+
+type MangaBookmarkNextChaptersPayload {
+  createdAt: ?
+  id: ?
+  manga: Manga
+  name: ?
+  number: ?
+  slug: ?
+  volume: ?
+}
+
+type MangaBranch {
+  chapters: ?
+  completed: ?
+  id: ?
+  lang: ?
+  manageRestriction: ?
+  primaryBranch: ?
+  translitionStatus: ?
+  viewerCanManage: ?
+  viewerCanTranslate: ?
+  viewerCanUpload: ?
+  volumePrimaryTeamActivities: VolumePrimaryTeamActivitie? ~
+  volumeTeamActivities: VolumeTeamActivitie? ~
+}
+
+type MangaChapter {
+  branchId: ?
+  createdAt: ?
+  creator: User
+  id: ?
+  manga: Manga? ~
+  name: ?
+  nextSlug: ?
+  number: ?
+  pages(cdnQuality: String): Page? | MangaChapterPage ~
+  prevSlug: ?
+  slug: ?
+  teamIds: ?
+  volume: ?
+}
+
+type MangaChapter? {
+  id: ?
+}
+
+type MangaChapterPage {
+  chapter: Chapter? ~
+  comments: ?
+  id: ?
+  image: Image
+  manga: Manga? | Manga ~
+  number: ?
+}
+
+type MangaChapterReadsCountInsightPayload {
+  count: ?
+  pointAt: ?
+}
+
+type MangaChaptersPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type MangaCharactersPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type MangaExternalSource {
+  createdAt: ?
+  id: ?
+  lastParsedAt: ?
+  nextParsingAt: ?
+  parsingBranches: ParsingBranche? ~
+  parsingEnabled: ?
+  parsingFrequency: ?
+  parsingPriority: ?
+  sourceId: ?
+  sourceSlug: ?
+  sourceUrl: ?
+  titles: Title? ~
+  type: ?
+  updatedAt: ?
+  watermark: ?
+}
+
+type MangaExternalSourcesPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type MangaPayload {
+  alternativeNames: AlternativeName? ~
+  applicationId: ?
+  banner: Image
+  branches: MangaBranch
+  chapters: ?
+  commentsEnabled: ?
+  completedOn: ?
+  containExplicitThemes: ?
+  cover: Image
+  formats: ?
+  id: ?
+  isLicensed: ?
+  labels: Label
+  links: Link? ~
+  localizations: Localization? ~
+  mainCharacters: Character
+  mainStaff: MainStaff? ~
+  malId: ?
+  muId: ?
+  originCountry: ?
+  originalName: OriginalName? ~
+  pinnedComment: Comment
+  publishers: Studio
+  rating: ?
+  recommendations: Manga
+  relations: Relation? ~
+  releasedOn: ?
+  score: ?
+  scoreDistributions: ScoreDistribution? ~
+  series: Series
+  slug: ?
+  source: ?
+  status: ?
+  titles: Title? ~
+  totalChaptersViews: ?
+  translitionStatus: ?
+  type: ?
+  userBookmarkCollectionDistributions: UserBookmarkCollectionDistribution? ~
+  viewerBookmark: UserBookmark
+  viewerBookmarkFriends: ViewerBookmarkFriend? ~
+  viewerInBlockedCountry: ?
+  viewerVote: ?
+  views: ?
+}
+
+type MangaReader? {
+  compressImage: ?
+  containerWidth: ?
+  mode: ?
+}
+
+type MangaRelationsPayload {
+  edges: Edge? ~
+}
+
+type MangaStaffPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type MangaSubmission {
+  changes: MangaSubmissionChangeUnion
+  createdAt: ?
+  id: ?
+  manga: Manga? ~
+  meta: Meta? ~
+  provider: User
+  status: ?
+  updatedAt: ?
+}
+
+type MangaSubmissionAlternativeBranchChange {
+  teams: Team
+}
+
+type MangaSubmissionAlternativeNamesChange {
+  addItems: AddItem? ~
+  oldValue: OldValue? ~
+  removeItems: RemoveItem? ~
+}
+
+type MangaSubmissionBannerChange {
+  newValue: Image
+  oldValue: Image
+}
+
+type MangaSubmissionBlockedInCountryVecChange {
+  addItems: ?
+  oldValue: ?
+  removeItems: ?
+}
+
+type MangaSubmissionBranchTranslatorsChange {
+  addItems: Team
+  branchId: ?
+  removeItems: Team
+}
+
+type MangaSubmissionCharactersChange {
+  removeItems: RemoveItem? ~
+  updateItems: UpdateItem? ~
+}
+
+type MangaSubmissionCompletedOnChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type MangaSubmissionCoverChange {
+  newValue: Image
+  oldValue: Image
+}
+
+type MangaSubmissionDescriptionsChange {
+  updateItems: UpdateItem? ~
+}
+
+type MangaSubmissionFormatVecChange {
+  addItems: ?
+  oldValue: ?
+  removeItems: ?
+}
+
+type MangaSubmissionLabelsChange {
+  addItems: Label
+  oldValue: Label
+  removeItems: Label
+}
+
+type MangaSubmissionLicenseeChange {
+  addItems: Studio
+  oldValue: Studio
+  removeItems: Studio
+}
+
+type MangaSubmissionLinkVecChange {
+  addItems: AddItem? ~
+  oldValue: OldValue? ~
+  removeItems: RemoveItem? ~
+}
+
+type MangaSubmissionMalIdChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type MangaSubmissionMuIdChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type MangaSubmissionOriginCountryChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type MangaSubmissionOriginalNameChange {
+  newValue: NewValue? ~
+  oldValue: OldValue? ~
+}
+
+type MangaSubmissionPublisherChange {
+  addItems: Studio
+  oldValue: Studio
+  removeItems: Studio
+}
+
+type MangaSubmissionRatingChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type MangaSubmissionRelationsChange {
+  removeItems: RemoveItem? ~
+  updateItems: UpdateItem? ~
+}
+
+type MangaSubmissionReleasedOnChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type MangaSubmissionSeriesChange {
+  addItems: Series
+  oldValue: Series
+  removeItems: Series
+}
+
+type MangaSubmissionSourceChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type MangaSubmissionStaffChange {
+  removeItems: RemoveItem? ~
+  updateItems: UpdateItem? ~
+}
+
+type MangaSubmissionStatusChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type MangaSubmissionTitlesChange {
+  addItems: AddItem? ~
+  oldValue: OldValue? ~
+  removeItems: RemoveItem? ~
+}
+
+type MangaSubmissionTranslitionStatusChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type MangaSubmissionTypeChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type MangaSubmissionsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+  totalCount: ?
+}
+
+type MangaViewsCountInsightPayload {
+  count: ?
+  pointAt: ?
+}
+
+type MangasPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type MergeUserAccountsPayload {
+  success: ?
+}
+
+type Meta? {
+  test: ?
+  url: ?
+}
+
+type MinPrice? {
+  amount: ?
+  currency: ?
+}
+
+type MyanimelistMangaMetadataPayload {
+  alternativeNames: AlternativeName? ~
+  formats: ?
+  labels: Label
+  originalName: OriginalName? ~
+  rating: ?
+  status: ?
+  titles: Title? ~
+  type: ?
+}
+
+type NewCard? {
+  card: Card
+  modifier: ?
+  quantity: ?
+  shard: ?
+}
+
+type NewCommentsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+  totalCount: ?
+}
+
+type NewMangaChaptersPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type NewValue? {
+  content: ?
+  lang: ?
+}
+
+type Node {
+  id: ?
+}
+
+type Node? {
+  anime: Anime
+  branchId: ?
+  character: Character
+  createdAt: ?
+  destination: AnimeRelationDestination | MangaRelationDestination
+  episode: Episode? ~
+  id: ?
+  image: Image
+  invite: Invite? ~
+  manga: Manga
+  name: ?
+  nodes: Anime|Manga
+  number: ?
+  pages: MangaChapterPage
+  person: Person
+  relation: ?
+  requested: ?
+  role: ?
+  roles: ?
+  slug: ?
+  teams: Team
+  titles: Title? ~
+  type: ?
+  user: User
+  volume: ?
+}
+
+type OldValue? {
+  content: ?
+  lang: ?
+  service: ?
+  type: ?
+  url: ?
+}
+
+type Original? {
+  height: ?
+  url: ?
+  width: ?
+}
+
+type OriginalName? {
+  content: ?
+  lang: ?
+}
+
+type Page? {
+  id: ?
+  image: Image
+  number: ?
+}
+
+type PageInfo? {
+  endCursor: ?
+  hasNextPage: ?
+  hasPreviousPage: ?
+  startCursor: ?
+}
+
+type ParsingBranche? {
+  branchId: ?
+  externalBranchId: ?
+  name: ?
+}
+
+type PaymentProcessor {
+  active: ?
+  allowedCountries: ?
+  allowedCurrencies: ?
+  allowedMethods: ?
+  code: ?
+  commission: ?
+  hold: ?
+  id: ?
+  name: ?
+  priority: ?
+  provider: ?
+  recurring: ?
+  test: ?
+}
+
+type PendingCard {
+  animated: ?
+  audio: ?
+  author: User
+  card: Card? ~
+  character: Character? ~
+  characterCards: Card
+  colors: ?
+  competitors: PendingCard
+  createdAt: ?
+  description: TiptapNodeUnion
+  entity: Anime|Manga
+  explicit: ?
+  featured: ?
+  id: ?
+  image: Image
+  labels: Label
+  rank: ?
+  slug: ?
+  state: ?
+  titles: Title? ~
+  updatedAt: ?
+}
+
+type PendingCardSlotsPayload {
+  available: ?
+  maxSlots: ?
+  resetAt: ?
+}
+
+type PendingCardsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type PendingGuildMember {
+  guildId: ?
+  request: ?
+  user: User
+  userId: ?
+  viewerCanManage: ?
+}
+
+type PendingGuildMembersPayload {
+  edges: Edge? ~
+}
+
+type PendingManga {
+  bySystem: ?
+  formats: ?
+  id: ?
+  labels: Label
+  malId: ?
+  muId: ?
+  originalName: OriginalName? ~
+  rating: ?
+  sourceLinks: ?
+  status: ?
+  teams: Team
+  titles: Title? ~
+  type: ?
+  user: User
+}
+
+type PendingMangaChapter {
+  bySystem: ?
+  createdAt: ?
+  creator: User
+  id: ?
+  manga: Manga? ~
+  moderationState: ?
+  name: ?
+  number: ?
+  pages: Page? ~
+  teams: Team
+  volume: ?
+}
+
+type PendingMangaChaptersPayload {
+  edges: Edge? ~
+}
+
+type PendingMember? {
+  request: ?
+}
+
+type PendingTeam {
+  bySystem: ?
+  description: ?
+  id: ?
+  name: ?
+  representativeUrl: ?
+  user: User
+}
+
+type PendingTeam? {
+  id: ?
+  name: ?
+}
+
+type PendingTeamMember {
+  id: ?
+  permissions: ?
+  roles: ?
+  user: User
+  viewerCanKick: ?
+}
+
+type PendingTeamMembersPayload {
+  edges: Edge? ~
+}
+
+type Person {
+  cover: Image
+  id: ?
+  malId: ?
+  name: ?
+  slug: ?
+  titles: Title? ~
+  updatedAt: ?
+}
+
+type Person? {
+  cover: Image
+  id: ?
+  name: ?
+  slug: ?
+  titles: Title? ~
+}
+
+type PersonSubmission {
+  changes: PersonSubmissionChangeUnion
+  createdAt: ?
+  id: ?
+  meta: Meta? ~
+  person: Person? ~
+  provider: User
+  status: ?
+  updatedAt: ?
+}
+
+type PersonSubmissionCoverChange {
+  newValue: Image
+  oldValue: Image
+}
+
+type PersonSubmissionMalIdChange {
+  newValue: ?
+  oldValue: ?
+}
+
+type PersonSubmissionTitlesChange {
+  addItems: AddItem? ~
+  oldValue: OldValue? ~
+  removeItems: RemoveItem? ~
+}
+
+type PersonSubmissionsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+  totalCount: ?
+}
+
+type PinCommentPayload {
+  success: ?
+}
+
+type Post {
+  author: User
+  comments: ?
+  content: TiptapNodeUnion
+  createdAt: ?
+  id: ?
+  lang: ?
+  pinnedComment: Comment
+  previewContent: TiptapNodeUnion
+  slug: ?
+  status: ?
+  team: Team
+  title: ?
+  viewerCanEdit: ?
+  views: ?
+}
+
+type PostsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type Preference? {
+  autobookmark: ?
+  commentsSort: ?
+  mangaReader: MangaReader? ~
+  showNsfw: ?
+}
+
+type Preview? {
+  card: Card
+  cardId: ?
+  modifier: ?
+  quantity: ?
+  shard: ?
+  slug: ?
+}
+
+type Price? {
+  amount: ?
+  currency: ?
+  exponent: ?
+}
+
+type ProjectTranslitionStatusDistribution? {
+  count: ?
+  entityType: ?
+  status: ?
+}
+
+type PublishPostPayload {
+  post: Post
+}
+
+type Range? {
+  end: ?
+  start: ?
+}
+
+type ReactConversationMessagePayload {
+  success: ?
+}
+
+type Reaction? {
+  content: ?
+  count: ?
+}
+
+type ReadConversationMessagePayload {
+  lastSeenMessageCursor: ?
+  success: ?
+  unreadCount: ?
+}
+
+type ReadMangaChapterPayload {
+  success: ?
+}
+
+type RedeemRedemptionPayload {
+  collectible: Collectible
+  experience: ?
+  points: ?
+}
+
+type Redemption {
+  amount: ?
+  code: ?
+  collectible: Collectible
+  createdAt: ?
+  endAt: ?
+  experience: ?
+  id: ?
+  points: ?
+  startAt: ?
+  usedCount: ?
+  user: User
+}
+
+type RedemptionsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type Relation? {
+  destination: AnimeRelationDestination | Guild | MangaRelationDestination
+  id: ?
+  relation: ?
+  sourceId: ?
+  type: ?
+}
+
+type RemoveItem? {
+  character: Character
+  content: ?
+  entity: Anime|Manga
+  lang: ?
+  person: Person
+  relation: ?
+  role: ?
+  roles: ?
+  service: ?
+  type: ?
+  url: ?
+}
+
+type RemoveUserCard? {
+  cardId: ?
+  modifier: ?
+  quantity: ?
+  shard: ?
+}
+
+type Report {
+  createdAt: ?
+  entity: Node
+  id: ?
+  moderator: User
+  reason: ?
+  reporter: User
+  status: ?
+  type: ?
+  updatedAt: ?
+}
+
+type ReportsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type RequestCreateCardPayload {
+  pendingCard: PendingCard
+}
+
+type RequestCreateMangaChapterPayload {
+  pendingMangaChapter: PendingMangaChapter
+}
+
+type RequestCreateMangaPayload {
+  pendingManga: PendingManga
+}
+
+type RequestCreateTeamPayload {
+  pendingTeam: PendingTeam? ~
+}
+
+type RequestDeleteMangaChapterPayload {
+  pendingMangaChapter: PendingMangaChapter
+}
+
+type RequestDeleteMangaPayload {
+  success: ?
+}
+
+type RequestGuildMemberPayload {
+  pendingMember: PendingMember? ~
+}
+
+type RequestParseMangaExternalSourcePayload {
+  success: ?
+}
+
+type RequestTeamMemberPayload {
+  pendingMember: PendingTeamMember
+}
+
+type RequestUpdateCardPayload {
+  pendingCard: PendingCard
+}
+
+type RequestUpdateMangaChapterPayload {
+  pendingMangaChapter: PendingMangaChapter
+}
+
+type Resize? {
+  height: ?
+  url: ?
+  width: ?
+}
+
+type ResolveConversationInvitePayload {
+  success: ?
+}
+
+type ResolveReportGroupPayload {
+  success: ?
+}
+
+type ResolveReportPayload {
+  report: Report
+}
+
+type ResolveTicketPayload {
+  ticket: Ticket? ~
+}
+
+type RestoreForgePayload {
+  userId: ?
+}
+
+type ScoreDistribution? {
+  count: ?
+  score: ?
+}
+
+type SearchAnime {
+  cover: Image
+  id: ?
+  originalName: ?
+  rating: ?
+  score: ?
+  slug: ?
+  status: ?
+  titles: Title? ~
+  translitionStatus: ?
+  type: ?
+}
+
+type SearchCharacter {
+  cover: Image
+  id: ?
+  name: ?
+  slug: ?
+  titles: Title? ~
+}
+
+type SearchGuild {
+  avatar: Image
+  id: ?
+  level: ?
+  name: ?
+  slug: ?
+}
+
+type SearchManga {
+  cover: Image
+  id: ?
+  originalName: ?
+  rating: ?
+  score: ?
+  slug: ?
+  status: ?
+  titles: Title? ~
+  translitionStatus: ?
+  type: ?
+}
+
+type SearchPayload {
+  edges: Edge? ~
+}
+
+type SearchPerson {
+  cover: Image
+  id: ?
+  name: ?
+  slug: ?
+  titles: Title? ~
+}
+
+type SearchStudio {
+  id: ?
+  logotype: Image
+  name: ?
+  slug: ?
+  titles: Title? ~
+}
+
+type SearchTeam {
+  activity: ?
+  avatar: Image
+  id: ?
+  name: ?
+  slug: ?
+  verified: ?
+}
+
+type SearchUser {
+  avatar: Image
+  bot: ?
+  frame: Image
+  id: ?
+  name: ?
+  slug: ?
+  status: Image
+  verified: ?
+}
+
+type Series {
+  id: ?
+  name: ?
+  slug: ?
+}
+
+type ShortsMangaChaptersPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type Statistic? {
+  achievements: ?
+  betterPercentile: ?
+  comments: ?
+  follows: ?
+  friends: ?
+  rank: ?
+  rateProjects: ?
+  readChapters: ?
+  subscribers: ?
+  watchEpisodes: ?
+}
+
+type Sticker {
+  id: ?
+  image: Image
+  name: ?
+  position: ?
+  unicode: ?
+}
+
+type StickerSet {
+  highlight: Sticker
+  id: ?
+  stickers: Sticker
+  titles: Title? ~
+}
+
+type Studio {
+  id: ?
+  logotype: Image
+  name: ?
+  slug: ?
+  titles: Title? ~
+}
+
+type SuggestAnimeSubmissionPayload {
+  success: ?
+}
+
+type SuggestCharacterSubmissionPayload {
+  success: ?
+}
+
+type SuggestMangaSubmissionPayload {
+  success: ?
+}
+
+type SuggestPersonSubmissionPayload {
+  success: ?
+}
+
+type Task {
+  active: ?
+  enabled: ?
+  endAt: ?
+  experience: ?
+  id: ?
+  meta: Meta? ~
+  points: ?
+  slug: ?
+  subscriptionTier: ?
+  threshold: ?
+  titles: Title? ~
+  type: ?
+}
+
+type Team {
+  about: TiptapNodeUnion
+  activity: ?
+  alternativeNames: ?
+  avatar: Image
+  banner: Image
+  botId: ?
+  chapters: ?
+  chaptersPerMonth: ?
+  createdAt: ?
+  disbandedOn: ?
+  donations: TitleLink|TeamDonationCard
+  foundedOn: ?
+  id: ?
+  lastProjects: LastProject? ~
+  links: Link? ~
+  members: ?
+  name: ?
+  ownerId: ?
+  projectTranslitionStatusDistributions: ProjectTranslitionStatusDistribution? ~
+  projects: ?
+  reactions: Reaction? ~
+  slug: ?
+  subscribers: ?
+  topMembers: TopMember? ~
+  updatedAt: ?
+  verified: ?
+  viewerCanManage: ?
+  viewerFollowStatus: ?
+  viewerIsMember: ?
+  views: ?
+  viewsPerMonth: ?
+}
+
+type TeamDonationCard {
+  number: ?
+  title: ?
+}
+
+type TeamMember {
+  id: ?
+  permissions: ?
+  roles: ?
+  user: User
+  viewerCanKick: ?
+  viewerCanUpdate: ?
+}
+
+type TeamMember? {
+  id: ?
+}
+
+type TeamMembersPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+  totalCount: ?
+}
+
+type TeamProject {
+  chapters: ?
+  entity: Anime|Manga | Manga
+  id: ?
+  lastActivityAt: ?
+  status: ?
+}
+
+type TeamProjectsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type TeamsCountTrendingInsightPayload {
+  count: ?
+  pointAt: ?
+}
+
+type TeamsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+  totalCount: ?
+}
+
+type Ticket {
+  createdAt: ?
+  creator: User
+  entity: Node
+  id: ?
+  moderator: User
+  solvedAt: ?
+  status: ?
+  type: ?
+  updatedAt: ?
+  userNote: TiptapNodeUnion
+}
+
+type Ticket? {
+  id: ?
+  status: ?
+}
+
+type TicketTypeDistributionsPayload {
+  count: ?
+  type: ?
+}
+
+type TicketsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type TiptapMarkBasic {
+  type: ?
+}
+
+type TiptapMarkLink {
+  attrs: Attr? ~
+  type: ?
+}
+
+type TiptapNodeCodeBlock {
+  attrs: Attr? ~
+  content: TiptapNodeUnion
+  type: ?
+}
+
+type TiptapNodeEmoji {
+  attrs: Attr? ~
+  type: ?
+}
+
+type TiptapNodeHeading {
+  attrs: Attr? ~
+  content: TiptapNodeUnion
+  type: ?
+}
+
+type TiptapNodeMention {
+  attrs: Attr? ~
+  type: ?
+}
+
+type TiptapNodeNestedBlock {
+  content: TiptapNodeUnion
+  type: ?
+}
+
+type TiptapNodeOnlyBlock {
+  type: ?
+}
+
+type TiptapNodeOrderedList {
+  attrs: Attr? ~
+  content: TiptapNodeUnion
+  type: ?
+}
+
+type TiptapNodeSticker {
+  attrs: Attr? ~
+  type: ?
+}
+
+type TiptapNodeText {
+  marks: TiptapMarkUnion
+  text: ?
+  type: ?
+}
+
+type TiptapNodeYoutube {
+  attrs: Attr? ~
+  type: ?
+}
+
+type Title? {
+  content: ?
+  lang: ?
+}
+
+type TitleLink {
+  service: ?
+  title: ?
+  url: ?
+}
+
+type TopMember? {
+  id: ?
+  permissions: ?
+  roles: ?
+  user: User? ~
+}
+
+type TopUpUserCreditsPayload {
+  invoiceId: ?
+  paymentData: ?
+  paymentUrl: ?
+  price: Price? ~
+  userId: ?
+}
+
+type TrackSearchQueryPayload {
+  success: ?
+}
+
+type TransferConversationPayload {
+  success: ?
+}
+
+type TransferGuildPayload {
+  success: ?
+}
+
+type TransferTeamPayload {
+  success: ?
+}
+
+type TypingConversationPayload {
+  success: ?
+}
+
+type UnpinCommentPayload {
+  success: ?
+}
+
+type UpdateAnimePayload {
+  anime: Anime
+}
+
+type UpdateCollectiblePayload {
+  collectible: Collectible
+}
+
+type UpdateCommentPayload {
+  comment: Comment
+}
+
+type UpdateConversationMessagePayload {
+  message: ConversationMessage
+}
+
+type UpdateConversationParticipantPermissionsPayload {
+  participant: ConversationParticipant
+}
+
+type UpdateConversationPayload {
+  conversation: Conversation
+}
+
+type UpdateConversationPermissionsPayload {
+  conversation: Conversation
+}
+
+type UpdateConversationThemePayload {
+  success: ?
+}
+
+type UpdateEmojiPayload {
+  emoji: Emoji
+}
+
+type UpdateGuildMemberPayload {
+  guildMember: GuildMember
+}
+
+type UpdateGuildPayload {
+  guild: Guild
+}
+
+type UpdateItem? {
+  character: Character
+  content: TiptapNodeUnion
+  entity: Anime|Manga
+  lang: ?
+  oldContent: TiptapNodeUnion
+  person: Person
+  relation: ?
+  role: ?
+  roles: ?
+}
+
+type UpdateMangaExternalSourcePayload {
+  externalSource: MangaExternalSource
+}
+
+type UpdateMangaPayload {
+  manga: Manga
+}
+
+type UpdateMangaReaderSettingPayload {
+  success: ?
+}
+
+type UpdatePostPayload {
+  post: Post
+}
+
+type UpdateStickerPayload {
+  sticker: Sticker
+}
+
+type UpdateTeamMemberPayload {
+  teamMember: TeamMember? ~
+}
+
+type UpdateTeamPayload {
+  team: Team
+}
+
+type UpdateUserBookmarkCollectionPayload {
+  collection: UserBookmarkCollection
+}
+
+type UpdateUserBookmarkPayload {
+  success: ?
+}
+
+type UpdateUserCard? {
+  cardId: ?
+  locked: ?
+  modifier: ?
+  quantity: ?
+  shard: ?
+  userId: ?
+}
+
+type UpdateUserPayload {
+  user: User
+}
+
+type UpdateUserPreferencesPayload {
+  preferences: Preference? ~
+}
+
+type UpdateUserStatusPayload {
+  status: Image
+}
+
+type UploadAchievementLevelCoverPayload {
+  cover: Image
+}
+
+type UploadAnimeEpisodeCoverPayload {
+  cover: Image
+}
+
+type UploadCollectibleImagePayload {
+  image: Image
+}
+
+type UploadConversationAvatarPayload {
+  avatar: Image
+}
+
+type UploadEmojiImagePayload {
+  image: Image
+}
+
+type UploadGuildAvatarPayload {
+  avatar: Image
+}
+
+type UploadGuildBannerPayload {
+  banner: Image
+}
+
+type UploadStickerImagePayload {
+  image: Image
+}
+
+type UploadTeamAvatarPayload {
+  avatar: Image
+}
+
+type UploadTeamBannerPayload {
+  banner: Image
+}
+
+type UploadUserAvatarPayload {
+  avatar: Image
+}
+
+type UploadUserBannerPayload {
+  banner: Image
+}
+
+type User {
+  about: TiptapNodeUnion
+  avatar: Image
+  banned: ?
+  banner: Image
+  birthdayOn: ?
+  bookmarkAnimePreview: BookmarkAnimePreview? ~
+  bookmarkCollections: UserBookmarkCollection
+  bookmarkEntityCollectionDistributions: BookmarkEntityCollectionDistribution? ~
+  bookmarkMangaPreview: BookmarkMangaPreview? ~
+  bot: ?
+  country: ?
+  createdAt: ?
+  currentBan: CurrentBan? ~
+  email: ?
+  firstName: ?
+  frame: Image
+  gender: ?
+  id: ?
+  idSlug: ?
+  lastAchievements: UserAchievement
+  lastActivities: Activity
+  lastCards: LastCard? ~
+  lastFollows: User
+  lastFriends: User
+  lastName: ?
+  lastOnlineAt: ?
+  level: ?
+  links: Link? ~
+  mainGuild: MainGuild? ~
+  name: ?
+  participant: UserParticipant
+  slug: ?
+  statistics: Statistic? ~
+  status: Image
+  twoFactorEnabled: ?
+  updatedAt: ?
+  verified: ?
+  viewerFriend: ViewerFriend? ~
+  waifus: Waifu? ~
+  wallpaper: Image
+}
+
+type User? {
+  avatar: Image
+  bot: ?
+  frame: Image
+  id: ?
+  name: ?
+  slug: ?
+  status: Image
+  verified: ?
+}
+
+type UserAchievement {
+  achievement: Achievement
+  completedAt: ?
+  createdAt: ?
+  currentLevel: AchievementLevel
+  level: ?
+  progress: ?
+  updatedAt: ?
+}
+
+type UserBookmark {
+  collectionId: ?
+  entity: Bookmarkable
+  entityId: ?
+  number: ?
+  page: ?
+}
+
+type UserBookmarkCollection {
+  entityType: ?
+  id: ?
+  name: ?
+  preference: UserBookmarkCollectionPreference
+  slug: ?
+  status: ?
+  system: ?
+  userId: ?
+}
+
+type UserBookmarkCollectionDistribution? {
+  collectionId: ?
+  count: ?
+}
+
+type UserBookmarkCollectionPreference {
+  displayColor: ?
+  name: ?
+  notifications: ?
+  visible: ?
+}
+
+type UserBookmarksPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type UserCard {
+  card: Card
+  locked: ?
+  modifier: ?
+  quantity: ?
+  shard: ?
+  userId: ?
+}
+
+type UserCardsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type UserImagesPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type UserParticipant {
+  owner: ?
+  roles: ?
+  team: Team
+}
+
+type UserRanksInsightPayload {
+  betterPercentile: ?
+  rank: ?
+  readChapters: ?
+  user: User
+  watchEpisodes: ?
+}
+
+type UserWaifu? {
+  id: ?
+  relation: ?
+}
+
+type UsersCountTrendingInsightPayload {
+  count: ?
+  pointAt: ?
+}
+
+type Variant? {
+  codec: ?
+  format: ?
+  height: ?
+  url: ?
+  width: ?
+}
+
+type ViewAdPayload {
+  success: ?
+}
+
+type ViewAnimePayload {
+  success: ?
+}
+
+type ViewCardPayload {
+  success: ?
+}
+
+type ViewGuildPayload {
+  success: ?
+}
+
+type ViewMangaPayload {
+  success: ?
+}
+
+type ViewPostPayload {
+  success: ?
+}
+
+type ViewTeamPayload {
+  success: ?
+}
+
+type ViewerBookmarkFriend? {
+  entityId: ?
+  status: ?
+  user: User
+}
+
+type ViewerCard? {
+  modifier: ?
+  quantity: ?
+  shard: ?
+}
+
+type ViewerCollectible? {
+  active: ?
+  id: ?
+}
+
+type ViewerFriend? {
+  destinationId: ?
+  relation: ?
+  sourceId: ?
+  status: ?
+  title: ?
+}
+
+type ViewerMember? {
+  experience: ?
+  guildId: ?
+  level: ?
+  points: ?
+  userId: ?
+}
+
+type ViewerParticipant? {
+  conversationId: ?
+  isAdmin: ?
+  lastSeenMessage: ConversationMessage
+  lastSeenMessageCursor: ?
+  permissions: ?
+  restrictedPermissions: ?
+  unreadCount: ?
+  userId: ?
+}
+
+type ViewerPayload {
+  user: User
+}
+
+type ViewerTeamProjectsPayload {
+  edges: Edge? ~
+  pageInfo: PageInfo? ~
+}
+
+type VolumePrimaryTeamActivitie? {
+  team: Team
+  volumes: BranchActivityVolume
+}
+
+type VolumeTeamActivitie? {
+  team: Team
+  volumes: BranchActivityVolume
+}
+
+type VoteAnimePayload {
+  success: ?
+}
+
+type VoteCardPayload {
+  success: ?
+}
+
+type VoteCommentPayload {
+  success: ?
+}
+
+type VoteMangaPayload {
+  success: ?
+}
+
+type Waifu? {
+  character: Character
+  id: ?
+  relation: ?
+}
+
+type WatchAnimeEpisodeTranslationPayload {
+  success: ?
+}
+
+type YouWillBeMyWaifuPayload {
+  userWaifu: UserWaifu? ~
+}
+
+# Input / variable types referenced (field shapes unknown from documents alone):
+# input AcceptAnimeSubmissionInput   used by: acceptAnimeSubmission
+# input AcceptCharacterSubmissionInput   used by: acceptCharacterSubmission
+# input AcceptCreateAnimeInput   used by: acceptCreateAnime
+# input AcceptCreateCardInput   used by: acceptCreateCard
+# input AcceptCreateMangaChapterInput   used by: acceptCreateMangaChapter
+# input AcceptCreateMangaInput   used by: acceptCreateManga
+# input AcceptCreateTeamInput   used by: acceptCreateTeam
+# input AcceptDeleteMangaChapterInput   used by: acceptDeleteMangaChapter
+# input AcceptGuildMemberRequestInput   used by: acceptGuildMemberRequest
+# input AcceptMangaSubmissionInput   used by: acceptMangaSubmission
+# input AcceptPersonSubmissionInput   used by: acceptPersonSubmission
+# input AcceptTeamMemberRequestInput   used by: acceptTeamMemberRequest
+# input AcceptUpdateCardInput   used by: acceptUpdateCard
+# input AcceptUpdateMangaChapterInput   used by: acceptUpdateMangaChapter
+# input AnimeBookmarkCollectionsFilter   used by: fetchAnimes
+# input AnimeCharacterFilter   used by: fetchAnimes
+# input AnimeCompletedOnFilter   used by: fetchAnimes
+# input AnimeEpisodeOrder   used by: fetchAnimeEpisodes
+# input AnimeEpisodeTranslationWatchesCountInsightGroup   used by: fetchAnimeChpaterInsight
+# input AnimeEpisodeTranslationWatchesCountInsightInterval   used by: fetchAnimeChpaterInsight
+# input AnimeEpisodeTranslationWatchesCountInsightPeriod   used by: fetchAnimeChpaterInsight
+# input AnimeEpisodesFilter   used by: fetchAnimes
+# input AnimeFormatFilter   used by: fetchAnimes
+# input AnimeLabelFilter   used by: fetchAnimes
+# input AnimeOrderField   used by: fetchAnimes
+# input AnimeOriginCountryFilter   used by: fetchAnimes
+# input AnimePopularPeriod   used by: fetchPopularAnimeByPeriod
+# input AnimeRatingFilter   used by: fetchAnimes
+# input AnimeReleasedOnFilter   used by: fetchAnimes
+# input AnimeSeasonFilter   used by: fetchAnimes
+# input AnimeSourceFilter   used by: fetchAnimes
+# input AnimeStaffFilter   used by: fetchAnimes
+# input AnimeStatusFilter   used by: fetchAnimes
+# input AnimeStudioFilter   used by: fetchAnimes
+# input AnimeSubmissionStatus   used by: fetchAnimeSubmissions
+# input AnimeTranslitionStatusFilter   used by: fetchAnimes
+# input AnimeTypeFilter   used by: fetchAnimes
+# input AnimeViewsCountInsightGroup   used by: fetchAnimeInsight
+# input AnimeViewsCountInsightInterval   used by: fetchAnimeInsight
+# input AnimeViewsCountInsightPeriod   used by: fetchAnimeInsight
+# input BulkDeleteConversationMessagesInput   used by: bulkDeleteConversationMessages
+# input BulkMoveUserBookmarksToCollectionInput   used by: bulkMoveUserBookmarksToCollection
+# input BulkUpdateUserCardLockInput   used by: bulkUpdateUserCardLock
+# input CardAuthorFilter   used by: fetchCards
+# input CardCharacterFilter   used by: fetchCards
+# input CardColorFilter   used by: fetchCards
+# input CardEntityFilter   used by: fetchCards
+# input CardLabelFilter   used by: fetchCards
+# input CardOrderField   used by: fetchCards
+# input CardQuantityFilter   used by: fetchUserCards
+# input CardRankFilter   used by: fetchCards
+# input CharacterSubmissionStatus   used by: fetchCharacterSubmissions
+# input CheckCardDropInput   used by: checkCardDrop
+# input ClaimCardDropInput   used by: claimCardDrop
+# input CollectibleBundleOrder   used by: fetchCollectibleBundles
+# input CollectibleCouponOrder   used by: fetchCollectibleCoupons
+# input CollectibleOrder   used by: fetchCollectibles
+# input CollectiblePriceGroup   used by: fetchCollectibles
+# input CollectibleRatingFilter   used by: fetchCollectibles
+# input CollectibleType   used by: fetchCollectibles
+# input CommentOrder   used by: fetchThreadComments
+# input CompleteTaskInput   used by: completeTask
+# input CreateAnimeEpisodeTranslationInput   used by: createAnimeEpisodeTranslation
+# input CreateCollectibleInput   used by: createCollectible
+# input CreateCollectibleOrderInput   used by: createCollectibleOrder
+# input CreateCommentInput   used by: createComment
+# input CreateConversationInput   used by: createConversation
+# input CreateConversationInviteInput   used by: createConversationInvite
+# input CreateConversationMessageInput   used by: createConversationMessage
+# input CreateEmojiInput   used by: createEmoji
+# input CreateEventInput   used by: createEvent
+# input CreateGuildInput   used by: createGuild
+# input CreateLinkInput   used by: createLink
+# input CreateMangaExternalSourceInput   used by: createMangaExternalSource
+# input CreatePostInput   used by: createPost
+# input CreatePostNotificationInput   used by: createPostNotification
+# input CreateRedemptionInput   used by: createRedemption
+# input CreateReportInput   used by: createReport
+# input CreateStickerInput   used by: createSticker
+# input CreateUserBookmarkCollectionInput   used by: createUserBookmarkCollection
+# input CreateUserWaifusInput   used by: youWillBeMyWaifu
+# input DeclineAnimeSubmissionInput   used by: declineAnimeSubmission
+# input DeclineCharacterSubmissionInput   used by: declineCharacterSubmission
+# input DeclineCreateAnimeInput   used by: declineCreateAnime
+# input DeclineCreateCardInput   used by: declineCreateCard
+# input DeclineCreateMangaChapterInput   used by: declineCreateMangaChapter
+# input DeclineCreateMangaInput   used by: declineCreateManga
+# input DeclineCreateTeamInput   used by: declineCreateTeam
+# input DeclineDeleteMangaChapterInput   used by: declineDeleteMangaChapter
+# input DeclineGuildMemberRequestInput   used by: declineGuildMemberRequest
+# input DeclineMangaSubmissionInput   used by: declineMangaSubmission
+# input DeclinePersonSubmissionInput   used by: declinePersonSubmission
+# input DeclineTeamMemberRequestInput   used by: declineTeamMemberRequest
+# input DeclineUpdateCardInput   used by: declineUpdateCard
+# input DeclineUpdateMangaChapterInput   used by: declineUpdateMangaChapter
+# input DeleteAnimeVoteInput   used by: deleteAnimeVote
+# input DeleteCardVoteInput   used by: deleteCardVote
+# input DeleteCommentInput   used by: deleteComment
+# input DeleteCommentVoteInput   used by: deleteCommentVote
+# input DeleteConversationAvatarInput   used by: deleteConversationAvatar
+# input DeleteConversationInviteInput   used by: deleteConversationInvite
+# input DeleteConversationMessageReactionInput   used by: deleteConversationMessageReaction
+# input DeleteConversationWallpaperInput   used by: deleteConversationWallpaper
+# input DeleteGuildAvatarInput   used by: deleteGuildAvatar
+# input DeleteGuildBannerInput   used by: deleteGuildBanner
+# input DeleteGuildMemberInput   used by: deleteGuildMember
+# input DeleteMangaBranchInput   used by: deleteMangaBranch
+# input DeleteMangaExternalSourceInput   used by: deleteMangaExternalSource
+# input DeleteMangaVoteInput   used by: deleteMangaVote
+# input DeleteTeamAvatarInput   used by: deleteTeamAvatar
+# input DeleteTeamBannerInput   used by: deleteTeamBanner
+# input DeleteTeamMemberInput   used by: deleteTeamMember
+# input DeleteUserAvatarInput   used by: deleteUserAvatar
+# input DeleteUserBannerInput   used by: deleteUserBanner
+# input DeleteUserBookmarkCollectionInput   used by: deleteUserBookmarkCollection
+# input DeleteUserBookmarkInput   used by: deleteUserBookmark
+# input DeleteUserWaifuInput   used by: iDontWantToPlayWithYouAnymore
+# input DepositGuildPointsInput   used by: depositGuildPoints
+# input EquipConversationCollectibleWallpaperInput   used by: equipConversationCollectibleWallpaper
+# input EquipUserAvatarInput   used by: equipUserAvatar
+# input EventOrder   used by: fetchEvents
+# input EventStatus   used by: fetchEvents
+# input EventType   used by: fetchEvents
+# input FailUserWaifuInput   used by: inLoveAsInWar
+# input ForgeCardInput   used by: forgeCards
+# input ForgeCardMode   used by: fetchForgeCardsSlots
+# input GiveUserAchievementInput   used by: giveUserAchievement
+# input GuildMemberOrder   used by: fetchGuildMembers
+# input GuildOrder   used by: fetchGuilds
+# input ImportUserBookmarkFromShikimoriInput   used by: importUserBookmarkFromShikimori
+# input InviteFriendInConversationInput   used by: inviteFriendInConversation
+# input JoinConversationInviteInput   used by: joinConversationInvite
+# input KickConversationParticipantInput   used by: kickConversationParticipant
+# input LinkVisitsCountInsightGroup   used by: fetchLinkInsight
+# input LinkVisitsCountInsightInterval   used by: fetchLinkInsight
+# input LinkVisitsCountInsightPeriod   used by: fetchLinkInsight
+# input MangaBookmarkCollectionsFilter   used by: fetchMangas
+# input MangaChapterOrder   used by: fetchMangaChapters
+# input MangaChapterReadsCountInsightGroup   used by: fetchMangaChpaterInsight
+# input MangaChapterReadsCountInsightInterval   used by: fetchMangaChpaterInsight
+# input MangaChapterReadsCountInsightPeriod   used by: fetchMangaChpaterInsight
+# input MangaChaptersFilter   used by: fetchMangas
+# input MangaCharacterFilter   used by: fetchMangas
+# input MangaCompletedOnFilter   used by: fetchMangas
+# input MangaFormatFilter   used by: fetchMangas
+# input MangaLabelFilter   used by: fetchMangas
+# input MangaOrderField   used by: fetchMangas
+# input MangaOriginCountryFilter   used by: fetchMangas
+# input MangaPopularPeriod   used by: fetchPopularMangaByPeriod
+# input MangaPublisherFilter   used by: fetchMangas
+# input MangaRatingFilter   used by: fetchMangas
+# input MangaReleasedOnFilter   used by: fetchMangas
+# input MangaSourceFilter   used by: fetchMangas
+# input MangaStaffFilter   used by: fetchMangas
+# input MangaStatusFilter   used by: fetchMangas
+# input MangaSubmissionStatus   used by: fetchMangaSubmissions
+# input MangaTranslitionStatusFilter   used by: fetchMangas
+# input MangaTypeFilter   used by: fetchMangas
+# input MangaViewsCountInsightGroup   used by: fetchMangaInsight
+# input MangaViewsCountInsightInterval   used by: fetchMangaInsight
+# input MangaViewsCountInsightPeriod   used by: fetchMangaInsight
+# input MergeUserAccountsInput   used by: mergeUserAccounts
+# input NaiveDate   used by: fetchEventDistributions, fetchEvents
+# input OrderDirection   used by: fetchAnimes, fetchCards, fetchMangas, fetchUserCards
+# input PendingCardOrder   used by: fetchPendingCards
+# input PersonSubmissionStatus   used by: fetchPersonSubmissions
+# input PinCommentInput   used by: pinComment
+# input PostStatus   used by: fetchPosts
+# input PublishPostInput   used by: publishPost
+# input ReactConversationMessageInput   used by: reactConversationMessage
+# input ReadConversationMessageInput   used by: readConversationMessage
+# input ReadMangaChapterInput   used by: readMangaChapter
+# input RedeemRedemptionInput   used by: redeemRedemption
+# input RedemptionOrder   used by: fetchRedemptions
+# input ReportEntityType   used by: fetchReports
+# input ReportOrder   used by: fetchReports
+# input ReportStatus   used by: fetchReports
+# input ReportType   used by: fetchReports
+# input RequestCreateCardInput   used by: requestCreateCard
+# input RequestCreateMangaChapterInput   used by: requestCreateMangaChapter
+# input RequestCreateMangaInput   used by: requestCreateManga
+# input RequestCreateTeamInput   used by: requestCreateTeam
+# input RequestDeleteMangaChapterInput   used by: requestDeleteMangaChapter
+# input RequestDeleteMangaInput   used by: requestDeleteManga
+# input RequestGuildMemberInput   used by: requestGuildMember
+# input RequestParseMangaExternalSourceInput   used by: requestParseMangaExternalSource
+# input RequestTeamMemberInput   used by: requestTeamMember
+# input RequestUpdateCardInput   used by: requestUpdateCard
+# input RequestUpdateMangaChapterInput   used by: requestUpdateMangaChapter
+# input ResolveConversationInviteInput   used by: resolveConversationInvite
+# input ResolveReportGroupInput   used by: resolveReportGroup
+# input ResolveReportInput   used by: resolveReport
+# input ResolveTicketInput   used by: resolveTicket
+# input RestoreForgeInput   used by: restoreForge
+# input SearchType   used by: search
+# input SuggestAnimeSubmissionInput   used by: suggestAnimeSubmission
+# input SuggestCharacterSubmissionInput   used by: suggestCharacterSubmission
+# input SuggestMangaSubmissionInput   used by: suggestMangaSubmission
+# input SuggestPersonSubmissionInput   used by: suggestPersonSubmission
+# input TeamActivity   used by: fetchTeams
+# input TeamOrder   used by: fetchTeams
+# input TeamProjectOrder   used by: fetchTeamProjects
+# input TeamProjectStatus   used by: fetchTeamProjects, fetchViewerTeamProjects
+# input TeamProjectSubjectType   used by: fetchTeamProjects, fetchViewerTeamProjects
+# input TicketEntityType   used by: fetchTickets
+# input TicketOrder   used by: fetchTickets
+# input TicketStatus   used by: fetchTickets, onTicketUpdated
+# input TicketType   used by: fetchTickets, onTicketUpdated
+# input TopUpUserCreditsInput   used by: topUpUserCredits
+# input TrackSearchQueryInput   used by: trackSearchQuery
+# input TransferConversationInput   used by: transferConversation
+# input TransferGuildInput   used by: transferGuild
+# input TransferTeamInput   used by: transferTeam
+# input TypingConversationInput   used by: typingConversation
+# input UnpinCommentInput   used by: unpinComment
+# input UpdateAnimeInput   used by: updateAnime
+# input UpdateCollectibleInput   used by: updateCollectible
+# input UpdateCommentInput   used by: updateComment
+# input UpdateConversationInput   used by: updateConversation
+# input UpdateConversationMessageInput   used by: updateConversationMessage
+# input UpdateConversationParticipantPermissionsInput   used by: updateConversationParticipantPermissions
+# input UpdateConversationPermissionsInput   used by: updateConversationPermissions
+# input UpdateConversationThemeInput   used by: updateConversationTheme
+# input UpdateEmojiInput   used by: updateEmoji
+# input UpdateGuildInput   used by: updateGuild
+# input UpdateGuildMemberInput   used by: updateGuildMember
+# input UpdateMangaExternalSourceInput   used by: updateMangaExternalSource
+# input UpdateMangaInput   used by: updateManga
+# input UpdateMangaReaderSettingInput   used by: updateMangaReaderSetting
+# input UpdatePostInput   used by: updatePost
+# input UpdateStickerInput   used by: updateSticker
+# input UpdateTeamInput   used by: updateTeam
+# input UpdateTeamMemberInput   used by: updateTeamMember
+# input UpdateUserBookmarkCollectionInput   used by: updateUserBookmarkCollection
+# input UpdateUserBookmarkInput   used by: updateUserBookmark
+# input UpdateUserInput   used by: updateUser
+# input UpdateUserPreferencesInput   used by: updateUserPreferences
+# input UpdateUserStatusInput   used by: updateUserStatus
+# input UploadAchievementLevelCoverInput   used by: uploadAchievementLevelCover
+# input UploadAnimeEpisodeCoverInput   used by: uploadAnimeEpisodeCover
+# input UploadCollectibleImageInput   used by: uploadCollectibleImage
+# input UploadConversationAvatarInput   used by: uploadConversationAvatar
+# input UploadEmojiImageInput   used by: uploadEmojiImage
+# input UploadGuildAvatarInput   used by: uploadGuildAvatar
+# input UploadGuildBannerInput   used by: uploadGuildBanner
+# input UploadStickerImageInput   used by: uploadStickerImage
+# input UploadTeamAvatarInput   used by: uploadTeamAvatar
+# input UploadTeamBannerInput   used by: uploadTeamBanner
+# input UploadUserAvatarInput   used by: uploadUserAvatar
+# input UploadUserBannerInput   used by: uploadUserBanner
+# input UserBookmarkOrder   used by: fetchUserBookmarks
+# input UserBookmarkSubjectType   used by: fetchUserBookmarks
+# input UserCardAuthorFilter   used by: fetchUserCards
+# input UserCardCharacterFilter   used by: fetchUserCards
+# input UserCardColorFilter   used by: fetchUserCards
+# input UserCardEntityFilter   used by: fetchUserCards
+# input UserCardLabelFilter   used by: fetchUserCards
+# input UserCardModifierFilter   used by: fetchUserCards
+# input UserCardOrderField   used by: fetchUserCards
+# input UserCardRankFilter   used by: fetchUserCards
+# input UserImageType   used by: fetchUserImages
+# input ViewAdInput   used by: viewAd
+# input ViewAnimeInput   used by: viewAnime
+# input ViewCardInput   used by: viewCard
+# input ViewGuildInput   used by: viewGuild
+# input ViewMangaInput   used by: viewManga
+# input ViewPostInput   used by: viewPost
+# input ViewTeamInput   used by: viewTeam
+# input VoteAnimeInput   used by: voteAnime
+# input VoteCardInput   used by: voteCard
+# input VoteCommentInput   used by: voteComment
+# input VoteMangaInput   used by: voteManga
+# input WatchAnimeEpisodeTranslationInput   used by: watchAnimeEpisodeTranslation
